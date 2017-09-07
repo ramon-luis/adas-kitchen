@@ -535,6 +535,71 @@ __Run-time:__  O(n)
 [code here]
 ```  
 
+## Dynamic Programming Algorithms  
+[General Tips for Dynamic Programming](#general-tips-for-dynamic-programming)
+[Knapsack Problem](#knapsack-problem)
+
+### General Tips for Dynamic Programming
+* try to identify sequence of steps -> __focus on last/incremental step__
+* use previous steps/calculations to arrive at specific point
+* breakdown information:
+  1. subproblem: in words
+  2. recurrence: equation __ALWAYS SOLVE BASE CASES__
+* assume you are ending or doing something at A[k]
+* consider transforming data and applying known algorithm solution
+* for __contiguous subsequence__ problems examine __subproblems that end at i/j__
+
+### Knapsack Problem  
+__Input:__  
+  * w<sub>1</sub>,...,w<sub>n</sub> weight of each item  
+  * v<sub>1</sub>,...,v<sub>n</sub> value of each item  
+  * W max weight limit  
+
+__Output:__ max possible value that fits into backpack within constraint W  
+__Idea:__  i<sup>th</sup> object has 2 possibilities:  
+  1. object exceeds weight limit -> use max value of objects before i<sup>th</sup> object considered  
+  2. object fits under weight limit:  
+      * more value __with__ object -> add i<sup>th</sup> value to max value of i-1 objects at weight limit of w<sub>j</sub>-w<sub>i</sub>  
+      * more value _without_ obect -> use max value of i-1 objects at same weight limit  
+
+__Subproblem:__  M[i,j] = max possible value using v[1...i] and weights w[1...i] where &#8721;W &#8804; j  
+__Recurrence:__  
+
+| cell | value |  
+| --- | --- |  
+| M[i, j] = | <b>if w<sub>i</sub> &#8804; j:</b> max { v<sub>i</sub> + M[i-1, j-w[i]], M[i-1, j] } |  
+|  | <b>else:</b> M[i-1, j] |  
+
+__Base Case:__  
+  * M[i, 0] = 0  _no items at weight limit 0_  
+  * M[0, j] = 0  _no items if 0 items allowed_  
+__Run-time:__  T(n, W) = O(n * W)  
+
+#### Pseudocode for Knapsack Problem  
+<pre><code>
+<b>Max-Value-In-Knapsack(w<sub>1</sub>,...,w<sub>n</sub>,v<sub>1</sub>,...,v<sub>n</sub>, W)</b>
+01 create table M[0...n, 0...W]
+02 for i = 0 to n
+03 	M[i,0] = 0
+04 for j = 0 to W
+05 	M[0,j] = 0
+06 for i = 1 to n
+07 	for j = 1 to W
+08 		if w[i] &#8804; j
+09 			M[i,j] = max{ v[i] + M[i-1, j-w[i]], M[i-1, j] }
+10 		else
+11 			M[i,j] = M[i-1, j]
+12 return M[n,W]
+</code></pre>  
+
+#### Java for Knapsack Problem  
+```
+[code here]
+
+```
+__Additional Resources for Algo Name__  
+* Wikipedia: https://en.wikipedia.org/wiki/Knapsack_problem  
+* GeeksforGeeks: http://www.geeksforgeeks.org/knapsack-problem/  
 
 
 
