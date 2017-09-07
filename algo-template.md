@@ -1,11 +1,6 @@
 ## Section Header
 [Algo Name](#algo-name)
 
-__Additional Resources for Section__
-* VisuAlgo: [link]
-* Toptal: [link]
-
-
 
 ### Algo Name  
 __Input:__ 
