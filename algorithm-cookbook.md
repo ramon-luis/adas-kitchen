@@ -542,6 +542,7 @@ __Run-time:__  O(n)
 [Longest Common Substring](#longest-common-substring)  
 [Rod Cutting](#rod-cutting)  
 [Max Interval Sum](#max-interval-sum)  
+[Subset Sum Exists](#subset-sum-exists)  
 
 ### General Tips for Dynamic Programming
 * try to identify sequence of steps -> __focus on last/incremental step__
@@ -575,8 +576,8 @@ __Recurrence:__
 |  | <b>else:</b> M[i-1, j] |  
 
 __Base Case:__  
-  * M[i, 0] = 0  _no items at weight limit 0_  
-  * M[0, j] = 0  _no items if 0 items allowed_  
+  * M[i, 0] = 0  // no items at weight limit 0  
+  * M[0, j] = 0  // no items if 0 items allowed  
 
 __Run-time:__  T(n, W) = O(n * W)  
 
@@ -775,5 +776,57 @@ __Run-time:__  T(n) = O(n)
 __Additional Resources for Max Interval Sum__   
 * Wikipedia: https://en.wikipedia.org/wiki/Maximum_subarray_problem  
 * GeeksforGeeks: http://www.geeksforgeeks.org/largest-sum-contiguous-subarray/  
+
+### Subset Sum Exists 
+__Input:__ array A[1...n] and value V   
+__Output:__ True/False if there is a subset of A that sums to value V
+__Idea:__  Create boolean table B[0...n, 0...V] where i<sup>th</sup> value is evaluated similar to Knapsack problem  
+__Subproblem:__  B[i,j] contains True/False if A[1...i] contains a subset that forms j  
+__Recurrence:__  
+
+| cell | value |  
+| --- | --- |  
+| B[i, j] = | <b>if</b> A[i] > j, <b>then</b> B[i-1, j] |  
+|  | <b>else:</b> 1 if B[i-1,j] == 1 or  B[i-1, j-A[i]] == 1 |  
+|  | don't use i<sup>th</sup> or use i<sup>th</sup> |    
+
+__Base Case:__  
+  * B[i, 0] = 1  // subset exists that makes zero
+  * B[0, j] = 1
+
+#### Pseudocode for Subset Sum Exists  
+<pre><code>
+<b>Subset Sum Exists(A[1...n], V)</b>
+01 create table B[0...n, 0...V]
+02 for i = 0 to n
+03 	B[i,0] = 1
+04 for j = 0 to V
+05 	B[0,j] = 1
+06 for i = 1 to n
+07 	for j = 1 to V
+08 		if A[i] > j
+09 			B[i,j] = B[i-1,j]
+10 		else if B[i-1,j] == 1 or B[i-1, j-A[i]] == 1
+11 			B[i,j] = 1
+12 		else
+13 			B[i,j] = 0
+14 return B[n,V]
+</code></pre>  
+
+``` Alternate Solution
+1. Fill table like knapsack
+2. check if M[n,V] == V
+  * M[i,j] = max sume of A[1...i] &#8804; j
+```  
+
+#### Java for Subset Sum Exists  
+```
+[code here]
+
+```
+__Additional Resources for Subset Sum Exists__  
+* Wikipedia: https://en.wikipedia.org/wiki/Subset_sum_problem  
+* GeeksforGeeks: http://www.geeksforgeeks.org/dynamic-programming-subset-sum-problem/  
+
 
 
