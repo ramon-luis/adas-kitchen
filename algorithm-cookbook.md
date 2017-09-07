@@ -541,6 +541,7 @@ __Run-time:__  O(n)
 [Longest Common Subsequence](#longest-common-subsequence)  
 [Longest Common Substring](#longest-common-substring)  
 [Rod Cutting](#rod-cutting)  
+[Max Interval Sum](#max-interval-sum)  
 
 ### General Tips for Dynamic Programming
 * try to identify sequence of steps -> __focus on last/incremental step__
@@ -718,7 +719,7 @@ __Run-time:__  T(n) = O(n<sup>2</sup>)
 #### Pseudocode for Rod Cutting
 <pre><code>
 <b>Max-Revenue(n, P[1...n])</b>
-01 create array M[0...n]
+01 create new array M[0...n]
 02 M[0] = 0
 03 for j = 1 to n
 04 	maxRevenue = -&#8734;
@@ -733,5 +734,46 @@ __Run-time:__  T(n) = O(n<sup>2</sup>)
 [code here]
 
 ```
-__Additional Resources for Rod Cutting__   
-* GeeksforGeeks: http://www.geeksforgeeks.org/dynamic-programming-set-13-cutting-a-rod/   
+__Additional Resources for Rod Cutting__  
+* GeeksforGeeks: http://www.geeksforgeeks.org/dynamic-programming-set-13-cutting-a-rod/  
+
+### Max Interval Sum  
+__Input:__ array A[1...n] of real numbers  
+__Output:__ a __contiguous__ subsequence that has maximum sum of all possible contiguous intervals  
+__Idea:__  Assume we know the max possible interval sum that __ENDS__ at A[i-1].  The max sum that __ENDS__ at A[i] is the __max value__ of 2 possibilities:  
+  1. adding A[i] to the max interval __ENDING__ at A[i-1] or  
+  2. starting a new subsequence at A[i]  
+
+__Subproblem:__ M[i] = max interval value that __ENDS__ at A[i]  
+__Recurrence:__ M[i] = max{ A[i], A[i] + M[i-1] }  
+__Base Case:__  M[0] = 0  
+__Run-time:__  T(n) = O(n)  
+
+#### Pseudocode for Max Inteval Sum  
+<pre><code>
+<b>Max-Interval-Sum(A[1...n])</b>
+01 create new array M[0...n]
+02 M[0] = 0
+03 maxSum = -&#8734;
+04 leftIndex = -1
+05 rightIndex = -1
+06 for i = 1 to n
+07 	M[i] = max{ A[i], A[i] + M[i-1] }
+08 	if M[i] > maxSum
+09 		maxSum = M[i]
+10 		rightIndex = i
+11 		if A[i] == maxSum
+			leftIndex = i
+12 return A[leftIndex...rightIndex], maxSum
+</code></pre>   
+
+#### Java for Max Interval Sum  
+```
+[code here]
+
+```
+__Additional Resources for Max Interval Sum__   
+* Wikipedia: https://en.wikipedia.org/wiki/Maximum_subarray_problem  
+* GeeksforGeeks: http://www.geeksforgeeks.org/largest-sum-contiguous-subarray/  
+
+
