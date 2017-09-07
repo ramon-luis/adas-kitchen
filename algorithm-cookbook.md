@@ -536,15 +536,15 @@ __Run-time:__  O(n)
 ```  
 
 ## Dynamic Programming Algorithms  
-[General Tips for Dynamic Programming](#general-tips-for-dynamic-programming)
-[Knapsack Problem](#knapsack-problem)
+[General Tips for Dynamic Programming](#general-tips-for-dynamic-programming)  
+[Knapsack Problem](#knapsack-problem)  
 
 ### General Tips for Dynamic Programming
 * try to identify sequence of steps -> __focus on last/incremental step__
 * use previous steps/calculations to arrive at specific point
 * breakdown information:
   1. subproblem: in words
-  2. recurrence: equation __ALWAYS SOLVE BASE CASES__
+  2. recurrence: equation -> __ALWAYS SOLVE BASE CASES__
 * assume you are ending or doing something at A[k]
 * consider transforming data and applying known algorithm solution
 * for __contiguous subsequence__ problems examine __subproblems that end at i/j__
@@ -560,19 +560,20 @@ __Idea:__  i<sup>th</sup> object has 2 possibilities:
   1. object exceeds weight limit -> use max value of objects before i<sup>th</sup> object considered  
   2. object fits under weight limit:  
       * more value __with__ object -> add i<sup>th</sup> value to max value of i-1 objects at weight limit of w<sub>j</sub>-w<sub>i</sub>  
-      * more value _without_ obect -> use max value of i-1 objects at same weight limit  
+      * more value __without__ obect -> use max value of i-1 objects at same weight limit  
 
 __Subproblem:__  M[i,j] = max possible value using v[1...i] and weights w[1...i] where &#8721;W &#8804; j  
 __Recurrence:__  
 
 | cell | value |  
 | --- | --- |  
-| M[i, j] = | <b>if w<sub>i</sub> &#8804; j:</b> max { v<sub>i</sub> + M[i-1, j-w[i]], M[i-1, j] } |  
+| M[i, j] = | <b>if</b> w<sub>i</sub> &#8804; j, <b>then</b> max { v<sub>i</sub> + M[i-1, j-w[i]], M[i-1, j] } |  
 |  | <b>else:</b> M[i-1, j] |  
 
 __Base Case:__  
   * M[i, 0] = 0  _no items at weight limit 0_  
   * M[0, j] = 0  _no items if 0 items allowed_  
+
 __Run-time:__  T(n, W) = O(n * W)  
 
 #### Pseudocode for Knapsack Problem  
@@ -601,6 +602,52 @@ __Additional Resources for Algo Name__
 * Wikipedia: https://en.wikipedia.org/wiki/Knapsack_problem  
 * GeeksforGeeks: http://www.geeksforgeeks.org/knapsack-problem/  
 
+### Largest Common Subsequence 
+__Input:__  two strings X[1...m], Y[1...n]  
+__Output:__ the __length__ of the longest common subsequence (same order of letters, not necessarily contiguous)  
+__Idea:__  adding i<sup>th</sup> letter to compare X[1...i] and Y[1...j] has 2 possibilities:  
+  1. if X[i] matches Y[j] then there is one more longer subsequence compared to X[1...i-1] and Y[1...j-1]  
+  2. otherwise same length subsequence as either X[1...i-1], Y[1...j] or X[1...i], Y[1...j-1]  
+
+__Subproblem:__  M[i,j] = length of longest possible subsequence for X[1...i] and Y[1...j]  
+__Recurrence:__  
+
+| cell | value |  
+| --- | --- |  
+| M[i, j] = | <b>if</b> X[i] == Y[j], <b>then</b> M[i-1, j-1] + 1    
+|  | <b>else:</b> max{ M[i-1, j], M[i, j-1]}    
+
+__Base Case:__  
+  * M[i, 0] = 0  _can't make a subsequence with zero letters_   
+  * M[0, j] = 0  _can't make a subsequence with zero letters_   
+
+__Run-time:__  T(m, n) = O(m * n)  
+
+#### Pseudocode for Longest Common Subsequence  
+<pre><code>
+<b>Longest-Common-Subsequence(X[1...m], Y[1...n])</b>
+01 create table M[0...m, 0...n]
+02 for i = 0 to m
+03 	M[i,0] = 0
+04 for j = 0 to n
+05 	M[0,j] = 0
+06 for i = 1 to m
+07 	for j = 1 to n
+08 		if X[i] == Y[j]
+09 			M[i,j] = M[i-1, j-1] + 1
+10 		else
+11 			M[i,j] = max{ M[i-1, j], M[i, j-1]}
+12 return M[m,n]
+</code></pre>  
+
+#### Java for Longest Common Subsequence    
+```
+[code here]
+
+```
+__Additional Resources for Algo Name__  
+* Wikipedia: https://en.wikipedia.org/wiki/Longest_common_subsequence_problem   
+* GeeksforGeeks: http://www.geeksforgeeks.org/longest-common-subsequence/   
 
 
 
