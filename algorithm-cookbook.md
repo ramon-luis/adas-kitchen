@@ -540,6 +540,7 @@ __Run-time:__  O(n)
 [Knapsack Problem](#knapsack-problem)  
 [Longest Common Subsequence](#longest-common-subsequence)  
 [Longest Common Substring](#longest-common-substring)  
+[Rod Cutting](#rod-cutting)  
 
 ### General Tips for Dynamic Programming
 * try to identify sequence of steps -> __focus on last/incremental step__
@@ -600,7 +601,7 @@ __Run-time:__  T(n, W) = O(n * W)
 [code here]
 
 ```
-__Additional Resources for Algo Name__  
+__Additional Resources for Knapsack Problem__  
 * Wikipedia: https://en.wikipedia.org/wiki/Knapsack_problem  
 * GeeksforGeeks: http://www.geeksforgeeks.org/knapsack-problem/  
 
@@ -620,8 +621,8 @@ __Recurrence:__
 |  | <b>else:</b> max{ M[i-1, j], M[i, j-1]}    
 
 __Base Case:__  
-  * M[i, 0] = 0  _can't make a subsequence with zero letters_   
-  * M[0, j] = 0  _can't make a subsequence with zero letters_   
+  * M[i, 0] = 0  // can't make a subsequence with zero letters    
+  * M[0, j] = 0  // can't make a subsequence with zero letters   
 
 __Run-time:__  T(m, n) = O(m * n)  
 
@@ -647,7 +648,7 @@ __Run-time:__  T(m, n) = O(m * n)
 [code here]
 
 ```
-__Additional Resources for Algo Name__  
+__Additional Resources for Longest Common Subsequence__  
 * Wikipedia: https://en.wikipedia.org/wiki/Longest_common_subsequence_problem   
 * GeeksforGeeks: http://www.geeksforgeeks.org/longest-common-subsequence/   
 
@@ -667,8 +668,8 @@ __Recurrence:__
 |  | <b>else:</b> 0  
 
 __Base Case:__  
-  * L[i, 0] = 0  _can't make a substring with zero letters_   
-  * L[0, j] = 0  _can't make a substring with zero letters_   
+  * L[i, 0] = 0  // can't make a substring with zero letters   
+  * L[0, j] = 0  // can't make a substring with zero letters  
 
 __Run-time:__  T(m, n) = O(m * n)  
 
@@ -696,7 +697,41 @@ __Run-time:__  T(m, n) = O(m * n)
 [code here]
 
 ```
-__Additional Resources for Algo Name__  
+__Additional Resources for Longest Common Substring__  
 * Wikipedia: https://en.wikipedia.org/wiki/Longest_common_substring_problem  
 * GeeksforGeeks: http://www.geeksforgeeks.org/longest-common-substring/  
 
+### Rod Cutting
+__Input:__ rod of length n, price per length as array P[1...n]  
+__Output:__ max revenue that can be generated from rod of length n  
+__Idea:__  
+  * a rod of length j can be split at i = 0 to j-1 ways
+  * assume we know the max value at each split for any possible additional splits  
+  * find the max value using P[i] + M[j-1]
+  * note that i will cross j-1, so all possible permutations are considered  
+
+__Subproblem:__ A[j] = max possible revenue that can be generated from a rod of length j  
+__Recurrence:__ A[j] = max<sub>i=0 to j</sub>{ P[i] + M[j-i] }  
+__Base Case:__  A[0] = 0  
+__Run-time:__  T(n) = O(n<sup>2</sup>)  
+
+#### Pseudocode for Rod Cutting
+<pre><code>
+<b>Max-Revenue(n, P[1...n])</b>
+01 create array M[0...n]
+02 M[0] = 0
+03 for j = 1 to n
+04 	maxRevenue = -&#8734;
+05 	for i = 0 to j
+06 		maxRevenue = max{ maxRevenue, P[i] + M[j-i] }
+07 	M[j] = maxRevenue
+08 return M[n]
+</code></pre>   
+
+#### Java for Rod Cutting  
+```
+[code here]
+
+```
+__Additional Resources for Rod Cutting__   
+* GeeksforGeeks: http://www.geeksforgeeks.org/dynamic-programming-set-13-cutting-a-rod/   
