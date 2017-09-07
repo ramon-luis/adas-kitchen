@@ -538,6 +538,8 @@ __Run-time:__  O(n)
 ## Dynamic Programming Algorithms  
 [General Tips for Dynamic Programming](#general-tips-for-dynamic-programming)  
 [Knapsack Problem](#knapsack-problem)  
+[Longest Common Subsequence](#longest-common-subsequence)  
+[Longest Common Substring](#longest-common-substring)  
 
 ### General Tips for Dynamic Programming
 * try to identify sequence of steps -> __focus on last/incremental step__
@@ -602,7 +604,7 @@ __Additional Resources for Algo Name__
 * Wikipedia: https://en.wikipedia.org/wiki/Knapsack_problem  
 * GeeksforGeeks: http://www.geeksforgeeks.org/knapsack-problem/  
 
-### Largest Common Subsequence 
+### Longest Common Subsequence 
 __Input:__  two strings X[1...m], Y[1...n]  
 __Output:__ the __length__ of the longest common subsequence (same order of letters, not necessarily contiguous)  
 __Idea:__  adding i<sup>th</sup> letter to compare X[1...i] and Y[1...j] has 2 possibilities:  
@@ -649,5 +651,52 @@ __Additional Resources for Algo Name__
 * Wikipedia: https://en.wikipedia.org/wiki/Longest_common_subsequence_problem   
 * GeeksforGeeks: http://www.geeksforgeeks.org/longest-common-subsequence/   
 
+### Longest Common Substring  
+__Input:__  two strings X[1...m], Y[1...n]  
+__Output:__ the __length__ of the longest common substring (contiguous letters in same order)  
+__Idea:__  the longest common substring that __ENDS__ at X[i], Y[j] has 2 possibilities:  
+  1. if X[i] matches Y[j] then the longest common substring that __ENDS__ at X[i], Y[j] is one more letter long than the substring at X[1...i-1], Y[1...j-1]  
+  2. otherwise the longest common substring that __ENDS_ at X[i], Y[j] is zero  
 
+__Subproblem:__  L[i,j] = max length of longest substring that __ENDS__ at X[i], Y[j]  
+__Recurrence:__  
+
+| cell | value |  
+| --- | --- |  
+| L[i, j] = | <b>if</b> X[i] == Y[j], <b>then</b> L[i-1, j-1] + 1  
+|  | <b>else:</b> 0  
+
+__Base Case:__  
+  * L[i, 0] = 0  _can't make a substring with zero letters_   
+  * L[0, j] = 0  _can't make a substring with zero letters_   
+
+__Run-time:__  T(m, n) = O(m * n)  
+
+#### Pseudocode for Longest Common Substring  
+<pre><code>
+<b>Longest-Common-Substring(X[1...m], Y[1...n])</b>
+01 create table L[0...m, 0...n]
+02 for i = 0 to m
+03 	L[i,0] = 0
+04 for j = 0 to n
+05 	L[0,j] = 0
+06 maxLength = 0
+07 for i = 1 to m
+08 	for j = 1 to n
+09 		if X[i] == Y[j]
+10 			L[i,j] = L[i-1, j-1] + 1
+11 		else
+12 			L[i,j] = 0
+13		maxLength = max{ maxLength, L[i,j] }
+14 return maxLength
+</code></pre>  
+
+#### Java for Longest Common Substring  
+```
+[code here]
+
+```
+__Additional Resources for Algo Name__  
+* Wikipedia: https://en.wikipedia.org/wiki/Longest_common_substring_problem  
+* GeeksforGeeks: http://www.geeksforgeeks.org/longest-common-substring/  
 
