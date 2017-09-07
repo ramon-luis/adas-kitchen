@@ -1,15 +1,20 @@
 # Algorithm Cookbook  
 [Runtime](#runtime)  
-[Sorting](#sorting-algorithms)  
+[Sorting Algorithms](#sorting-algorithms)  
 &nbsp;&nbsp;[Insertion Sort](#insertion-sort)  
 &nbsp;&nbsp;[Merge Sort](#merge-sort)  
 &nbsp;&nbsp;[Merge](#merge)  
 &nbsp;&nbsp;[Quicksort](#quicksort)  
 &nbsp;&nbsp;[Partition](#partition)  
-[Search and Select](#search-and-select-algorithms)  
+[Search and Select Algorithms](#search-and-select-algorithms)  
 &nbsp;&nbsp;[Binary Search](#binary-search)  
-[Dynamic Programming](#dynamic-programming-algorithms)  
-[Graphs](#graph-algorithms)  
+&nbsp;&nbsp;[Inversion Count](#inversion-count)  
+&nbsp;&nbsp;[Triple Count](#triple-count)  
+&nbsp;&nbsp;[k From Median](#k-from-median)
+&nbsp;&nbsp;[Array Contains Integers That Sum to X](#array-contains-integers-that-sum-to-x)  
+&nbsp;&nbsp;[k Largest Less Than Median](#k-largest-less-than-median)  
+[Dynamic Programming Algorithms](#dynamic-programming-algorithms)  
+[Graph Algorithms](#graph-algorithms)  
 
 ## Runtime
 
@@ -57,7 +62,7 @@ __Run-time:__ O(n<sup>2</sup>)
 
 #### Pseudocode for Insertion Sort  
 <pre><code>
-<b>Insertion-Sort(A[1..n])</b>
+<b>Insertion-Sort(A[1..n])</b> where A is <b>unsorted</b> array
 01 for j=2 to n
 02	key = A[j]
 03	i = j-1
@@ -93,7 +98,7 @@ Reduce: apply Master Theorem where a=2, b=2, d=1 to arrive at O(n lg n) where lg
 
 #### Pseudocode for Merge Sort  
 <pre><code>
-<b>Merge-Sort(A[1..n], p, r])</b>
+<b>Merge-Sort(A[1..n], p, r])</b> where A is <b>unsorted</b> array
 01 if p &lt; r
 02	q = &#8970;<sup>p+r</sup>&frasl;<sub>2</sub>&#8971;
 03	MergeSort(A, p, q)
@@ -133,7 +138,7 @@ __Run-time:__ O(n) // 3 `for` loops: n<sub>1</sub>, n<sub>2</sub>, `p to r = n`
 #### Pseudocode for Merge  
 <pre><code>
 <b>Input: Single array with markers to sub-divide</b>
-<b>Merge(A, p, q, r])</b> 
+<b>Merge(A, p, q, r])</b> where A is <b>unsorted</b> array
 01 n<sub>1</sub> = q - p + 1  // p to q <em>inclusive</em> of q
 02 n<sub>2</sub> = r - q  // q to r <em>exclusive</em> of q
 03 L[1...n<sub>1</sub>+1], L[1...n<sub>2</sub>+1] are new arrays  // need extra memory allocation for sentinels
@@ -155,7 +160,7 @@ __Run-time:__ O(n) // 3 `for` loops: n<sub>1</sub>, n<sub>2</sub>, `p to r = n`
 
 <pre><code>
 <b>Input: Two sorted arrays</b>
-<b>Merge(A<sub>1</sub>[1...m], A<sub>2</sub>[1...n])</b>
+<b>Merge(A<sub>1</sub>[1...m], A<sub>2</sub>[1...n])</b> where A<sub>1</sub> and A<sub>2</sub> are <b>sorted</b> arrays
 01 L[1...m+1], R[1...n+1], A[1...m+n] are new arrays  // need extra memory allocation for sentinels
 02 for i = 1 to m  // fill L
 03 	L[i] = A<sub>1</sub>[i]
@@ -201,7 +206,7 @@ __Run-time:__
 
 #### Pseudocode for Quicksort  
 <pre><code>
-<b>Quicksort(A[1...n], p, r)</b>
+<b>Quicksort(A[1...n], p, r)</b> where A is <b>unsorted</b> array
 01 if p &lt; r
 02 	q = Partition(A, p, r)  // T(n) = O(n)
 03 	Quicksort(A, p, q-1)  // T(n) ranges from O(n lg n) to O(n<sup>2</sup>)
@@ -209,7 +214,7 @@ __Run-time:__
 </code></pre>
 
 <pre><code>
-<b>Random-Quicksort(A[1...n], p, r)</b>
+<b>Random-Quicksort(A[1...n], p, r)</b> where A is <b>unsorted</b> array
 01 if p &lt; r
 02 	q = Random-Partition(A, p, r)  // T(n) = O(n)
 03 	Random-Quicksort(A, p, q-1)  // T(n) ranges from O(n lg n) to O(n<sup>2</sup>)
@@ -217,7 +222,7 @@ __Run-time:__
 </code></pre>
 
 <pre><code>
-<b>Random-Partition(A, p, r)</b>
+<b>Random-Partition(A, p, r)</b> where A is <b>unsorted</b> array
 01 x = Random(p,r)  // random index between p and r inclusive
 02 exchange A[x] and A[r]
 03 return Partition(A, p, r)
@@ -256,7 +261,7 @@ What does Partition return if all elements are equal in value? __i+1 = r__
 
 #### Pseudocode for Partition 
 <pre><code>
-<b>Partition(A, p, r)</b>
+<b>Partition(A, p, r)</b> where A is <b>unsorted</b> array
 01 x = A[r]  // set pivot
 02 i = p-1  // set left marker i outside of p
 03 for j = p to r-1  // loop from p to pivot
@@ -277,7 +282,9 @@ What does Partition return if all elements are equal in value? __i+1 = r__
 [Binary Search](#binary-search)  
 [Inversion Count](#inversion-count)  
 [Triple Count](#triple-count)  
-[k from Median](#k-from-median)  
+[k From Median](#k-from-median)  
+[Array Contains Integers That Sum to X](#array-contains-integers-that-sum-to-x)  
+[k Largest Less Than Median](#k-largest-less-than-median)  
 
 ### Binary Search 
 __Input:__ a __sorted__ array, value `x` to find  
@@ -289,7 +296,7 @@ __IMPORTANT:__ Always __SORT__ before using Binary Search!
 
 #### Pseudocode for Binary Search  
 <pre><code>
-<b>Binary-Search(A, x)</b> where A is a <b>SORTED</b> array and x is element to find within A
+<b>Binary-Search(A, x)</b> where A is a <b>SORTED</b> array
 01 return Recursive-Search(A, 1, n, x)  // initial call, assumes 1 is left-most index
 </code></pre>
 
@@ -335,7 +342,7 @@ __Run-time:__
 
 #### Pseudocode for Select 
 <pre><code>
-<b>Random-Select(A, p, r, i)</b>
+<b>Random-Select(A, p, r, i)</b> where A is <b>unsorted</b> array
 01 if p == r
 02 	return A[p]
 03 q = Random-Partition(A, p, r)
@@ -372,7 +379,7 @@ __Run-time:__ O(n lg n) same as Merge Sort
 
 #### Pseudocode for Inversion Count  
 <pre><code>
-<b>Inversion-Count(A)</b>
+<b>Inversion-Count(A)</b> where A is <b>unsorted</b> array
 01 inversionCount = 0  // global variable
 02 Merge-Sort(A, 1, n)  // call Merge Sort on entire array
 03 return inversionCount
@@ -420,11 +427,11 @@ __Run-time:__ O(n lg n) same as Merge Sort
 __Input:__ an __unsorted__ array A[1...n] consisting of distinct integers  
 __Output:__ the count of _triples_ in array where 3 numbers sum to zero  
 __Idea:__ sort array, then take every pair of numbers and run __binary search__ to find 3rd value  
-__Run-time:__ O(n<sup>2</sup> lg n)  
+__Run-time:__ O(n<sup>2</sup> lg n)  // Binary-Search (lg n) called on double loop (n<sup>2</sup>)
 
 #### Pseudocode for Triple Count  
 <pre><code>
-<b>Triple-Count(A[1...n])</b> where A is __unsorted__ array
+<b>Triple-Count(A[1...n])</b> where A is <b>unsorted</b> array
 01 Merge-Sort(A)  // need to sort before we can use Binary-Search
 02 tripleCount = 0
 03 for i = 1 to n-1  // loop through all pairs from left to right
@@ -443,7 +450,7 @@ __Run-time:__ O(n<sup>2</sup> lg n)
 
 ```
 
-### k from Median  
+### k From Median  
 __Input:__ an __unsorted__ array A[1...n] and positive integer k &#8804; n  
 __Output:__ k numbers closest in __value__ to the median of   
 __Idea:__  
@@ -452,16 +459,17 @@ __Idea:__
   * copy A to A' and call Select(A', k) to find k<sup>th</sup> value.  
     * need to use A' because Select will semi-sort the array  
   * Check values in D: if &#8804; k<sup>th</sup>, then return original value stored in A  
+
 __Run-time:__  
 
-#### Pseudocode for k from Median  
+#### Pseudocode for k From Median  
 <pre><code>
-<b>K-From-Median(A, k)</b> where A is __unsorted__ array and k is desired size of numbers returned that are closest in value to median
-01 medianIndex = &#8970;<sup>n</sup>&frasl;<sub>2</sub>&#8971
+<b>K-From-Median(A, k)</b> where A is <b>unsorted</b> array
+01 medianIndex = &#8970;<sup>n</sup>&frasl;<sub>2</sub>&#8971;
 02 medianValue = Select(A, medianIndex)
 03 D is new array
 04 for i = 1 to n
-05 	D[i] = | A[i] - medianValue |  // distance from median value
+05 	D[i] = |A[i] - medianValue|  // distance from median value
 06 copy D to K
 07 kValue = Select(K, kValue)
 08 for i = 1 to n
@@ -469,11 +477,64 @@ __Run-time:__
 10 		print A[i]
 </code></pre>  
 
-#### Java for k from Median  
+#### Java for k From Median  
 ```
 [code here]
 
 ```  
+
+### Array Contains Integers That Sum to X  
+__Input:__ an __unsorted__ array A[1...n] of distinct integers and target sum integer x  
+__Output:__ True/False if array contains two integers that sum to x  
+__Idea:__  
+  * x = y + z  
+  * x = y + A[i]  
+  * we are given x and know A[i], therefore need to search for y = x - A[i]  
+  * sort, then use Binary-Search  
+
+__Run-time:__  O(n lg n)  // Binary-Search (lg n) called on all elements (n)  
+
+#### Pseudocode for Array Contains Integers That Sum to X  
+<pre><code>
+<b>Has-Integer-Sum(A[1...n], x)</b> where A is <b>unsorted</b> array
+01 Merge-Sort(A)  // <b>important: sort first so we can use BinarySearch</b>
+02 for i = 1 to n
+03 	y = x - A[i]
+04 	if Binary-Search(A, y) != 1  // found a match, T(n) = O(lg n)
+05 		return true
+06 return false
+</code></pre>  
+
+#### Java for Array Contains Integers that Sum to X  
+```
+[code here]
+```  
+
+### k Largest Less Than Median  
+__Input:__ an __unsorted__ array A[1...n] of distinct integers and positive integer k &lt; <sup>n</sup>&frasl;<sub>2</sub>  
+__Output:__ k largest numbers in A that are less than the median  
+__Idea:__  
+  * find median  
+  * use select to roughly sort and get small values below median  
+  * use select to roughly sort again and get m-k values below m-k index  
+  * values in m-k to median should be grouped accordingly  
+
+__Run-time:__  O(n)  
+
+#### Pseudocode for k Largest Less Than Median  
+<pre><code>
+<b>Get-K-Largest-Less-Than-Median(A, k)</b> where A is <b>unsorted</b> array
+01 m = &#8970;<sup>n+1</sup>&frasl;<sub>2</sub>&#8971;  // index of median
+02 d = Select(A, m)  // dummy value, <em>semi-sorts</em> to get small values below median
+03 d = Select(A, m-k-1)  // dummy value, <em>semi-sorts</em> to get m-k values below m-k
+04 return A[m-k...m-1]
+</code></pre>  
+
+#### Java for k Largest Less Than Median  
+```
+[code here]
+```  
+
 
 
 
