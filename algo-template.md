@@ -7,26 +7,26 @@ __Additional Resources for Section__
 
 
 
+### Algo Name  
+__Input:__ 
+__Output:__ 
+__Structure:__  
+__Maintains:__  
+__Run-time:__ O
 
-### Algo Name
-Input:
-Output:
-Structure:
-Run-time:
-Maintains:
-Loop Invariant:
+#### Pseudocode for Algo Name  
+<pre><code>
+<b>Algo-Name(input)</b>
+01 ...
+02 ...
+</code></pre>
 
-#### Pseudocode for Algo Name
+#### Java for Algo 
 ```
 [code here]
-```
-
-#### Java for Algo Name
-```
-[code here]
 
 ```
-__Additional Resources for Algo Name__
-* Wikipedia: [link]
-* GeeksforGeeks: [link]
-* Toptal: [link]
+__Additional Resources for Algo Name__  
+* Wikipedia:  
+* GeeksforGeeks:   
+* Toptal:  
