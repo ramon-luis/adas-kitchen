@@ -26,6 +26,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[Minimum Coins Needed](#minimum-coins-needed)  
 &nbsp;&nbsp;&nbsp;&nbsp;[Can Partition Array Into Equal Sums](#can-partition-array-into-equal-sums)  
 [Graph Algorithms](#graph-algorithms)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Breadth First Search](#breadth-first-search)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Depth First Search](#depth-first-search)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Topological Sort](#topological-sort)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Strongly Connected Components](#strongly-connected-components)  
+&nbsp;&nbsp;&nbsp;&nbsp;[Identify Connected Components](#identify-connected-components)  
 
 ## Runtime
 
@@ -1031,3 +1036,258 @@ __Run-time:__  T(n, <sup>sum</sup>&frasl;<sub>2</sub>) = O(n * <sup>sum</sup>&fr
 __Additional Resources for Can Partition Array Into Equal Sums__  
 * Wikipedia: https://en.wikipedia.org/wiki/Partition_problem  
 * GeeksforGeeks: http://www.geeksforgeeks.org/dynamic-programming-set-18-partition-problem/  
+
+## Graph Algorithms
+[Breadth First Search](#breadth-first-search)  
+[Depth First Search](#depth-first-search)  
+[Topological Sort](#topological-sort)  
+[Strongly Connected Components](#strongly-connected-components)  
+[Identify Connected Components](#identify-connected-components)  
+
+### Breadth First Search  
+__Input:__ an unweighted, directed or undirected graph G=(V,E) and a __source vertex s__  
+__Output:__ the __shortest path__ distance d[v] from s to every vertex v and the immediate parent p[v] along the shortest path, i.e. BFS tree  
+__Structure:__ 
+  * uses a __FIFO (first-in, first-out) queue Q__ to process vertices  
+  * vertices are __added to Q as they are discovered__ along a path  
+  * uses a __while loop__ to process Q and colors to evaluate each vertex only once  
+
+__Maintains:__  
+  * color[v] := __white__ (unprocessed), __gray__ (being processed), __black__ (already processed)  
+  * d[v] := distance (edges) from s to v along shortest path  
+  * p[v] := immediate parent vertex along shortest path from s to v  
+
+__Run-time:__ O(V+E)  
+
+__BFS requires a source vertex and only accesses connected vertices__
+
+#### Pseudocode for Breadth First Search (BFS)  
+<pre><code>
+<b>Breadth-First-Search(G, s)</b>  // BFS
+01 Initialize-Single-Source(G, s) // initialize single source
+02 color[s] = gray
+03 Q = nil
+04 Enqueue(Q, s)
+05 while Q != nil
+06 	u = Dequeue(Q)
+07 	for each vertex v in Adj[u]
+08 		if color[v]  == white
+09 			d[v] = d[u] + 1
+10 			p[v] = u
+11 			color[v] = gray
+12 			Enqueue(Q,v)
+13 	color[u] = black
+</code></pre>
+
+<pre><code>
+<b>Initialize-Single-Source(G, s)</b> // ISS
+01 for each vertex v in V
+02 	color[v] = white
+03 	d[v] = 
+04 	p[v] = nil
+05 d[s] = 0
+</code></pre>
+
+#### Java for Breadth First Search  
+```
+[code here]
+
+```  
+__Additional Resources for Breadth First Search__  
+* Wikipedia: https://en.wikipedia.org/wiki/Breadth-first_search  
+* GeeksforGeeks: http://www.geeksforgeeks.org/breadth-first-traversal-for-a-graph/  
+* StackOverflow: https://stackoverflow.com/documentation/algorithm/7215/breadth-first-search  
+
+### Depth First Search  
+__Input:__ an unweighted, directed or undirected graph G=(V,E) (__no source needed - all vertices visited__) 
+__Output:__ the discovery time, finsihing time, and immediate parent along a depth-first search of all paths, i.e. a __DFS forest__ which is __dependent on order of vertices__ and __order of adjacency lists__.  
+__Structure:__ 
+  * uses a `for` loop to call DFS-Visit on every unexplored (white) vertex  
+  * DFS-Visit calls itself on every unexplored (white) edge, i.e. vertex v in adj[u]  
+
+__Maintains:__  
+  * color[v] := __white__ (unprocessed), __gray__ (being processed), __black__ (already processed)  
+  * d[v] := discovery time of v  
+  * p[v] := parent of v in DFS tree  
+  * f[v] := finishing time of v
+  * time := time during algorithm
+
+__Run-time:__ O(V+E)  
+__Edge Types:__
+  * tree/forward: d[u] &lt; d[v] &lt; f[v] &lt; f[u]  ::  gray->white (tree) | gray->gray (forward)  
+  * back: d[v] &lt; d[u] &lt; f[u] &lt; f[v]  ::  gray-> gray
+  * cross: d[v] &lt; f[v] &lt; d[u] &lt; f[u]
+
+__Applications / Uses__  
+  * is G connected?
+  * how many connected components are in G?
+  * what are the connected components in G?
+  * is there a vista vertex? (i.e. a vertex with path to all other vertices)
+  * is there a cycle in G?
+  * other applications of DFS-Visit
+
+#### Pseudocode for Depth First Search (DFS)  
+<pre><code>
+<b>Depth-First-Search(G)</b>  // DFS
+01 for each vertex v in V
+02 	color[v] = white
+03 	p[v] = nil
+04 time = 0  // global variable
+05 for each vertex u in V
+06 	if color[u] == white
+07 		DFS-Visit(G, u)
+</code></pre>
+
+<pre><code>
+<b>DFS-Visit(G, u)</b>
+01 time = time + 1
+02 d[u] = time
+03 color[u] = gray
+04 for each vertex v in adj[u]
+05 	if color[v] == white
+06 		DFS-Visit(G, v)
+07 color[v] = black
+08 time = time + 1
+09 f[v] = time
+</code></pre>
+
+#### Java for Depth First Search  
+```
+[code here]
+
+```  
+__Additional Resources for Depth First Search__  
+* Wikipedia: https://en.wikipedia.org/wiki/Depth-first_search  
+* GeeksforGeeks: http://www.geeksforgeeks.org/depth-first-traversal-for-a-graph/  
+* StackOverflow: https://stackoverflow.com/documentation/algorithm/7247/depth-first-search   
+
+### Topological Sort  
+__Input:__ DAG, __directed acyclic__ graph  
+__Output:__ list of vertices sorted by reverse finishing time (longest to shortest)  
+__Structure:__ DFS that appends each vertex to front of linked-list as it finishes  
+__Maintains:__  
+  * sames as DFS: d[v], f[v], p[v], color[v], time  
+  * linked-list   
+
+__Run-time:__ O(V+E)  
+
+__Applications:__  
+  * ordering of tasks  
+  * sorting vertices into a "horizontal" line  
+
+#### Pseudocode for Topological Sort
+<b>Topological-Sort(G)</b>
+01 create new linked-list orderedList  // global variable
+02 DFS(G)
+03 return orderedList
+</code></pre>
+
+<pre><code>
+<b>Depth-First-Search(G)</b>  // DFS
+01 for each vertex v in V
+02 	color[v] = white
+03 	p[v] = nil
+04 time = 0  // global variable
+05 for each vertex u in V
+06 	if color[u] == white
+07 		DFS-Visit(G, u)
+</code></pre>
+
+<pre><code>
+<b>DFS-Visit(G, u)</b>
+01 time = time + 1
+02 d[u] = time
+03 color[u] = gray
+04 for each vertex v in adj[u]
+05 	if color[v] == white
+06 		DFS-Visit(G, v)
+07 color[v] = black
+08 time = time + 1
+09 f[v] = time
+10 append u to front of orderedList
+</code></pre>
+
+#### Java for Topological Sort 
+```
+[code here]
+
+```  
+__Additional Resources for Topological Sort__  
+* Wikipedia: https://en.wikipedia.org/wiki/Topological_sorting  
+* GeeksforGeeks: http://www.geeksforgeeks.org/topological-sorting/  
+
+### Strongly Connected Components  
+__Input:__ directed (unweighted) graph G=(V,E)   
+__Output:__ groups/trees of strongly connected components where every pair of vertices (u,v) is reachable from each other  
+__Structure:__  
+  1. call DFS
+  2. create transpose G<sup>T</sup> of G
+  3. run DFS on G<sup>T</sup> in decreasing f[u] time  
+
+__Maintains:__ same as DFS: d[v], f[v], p[v], color[v], time  
+__Run-time:__ O(V+E)  
+
+#### Pseudocode for Strongly Connected Components  
+<b>Strongly-Connected-Components(G)</b>
+01 DFS(G)
+02 G<sup>T</sup> = Transpose(G)
+03 DFS(G<sup>T</sup>) but in main loop consider vertices in decreasing order of f[v]
+04 output vertices of each tree from DFS(G<sup>T</sup>) as separate SCC (Strongly Connected Component)
+</code></pre>
+
+#### Java for Strongly Connected Components  
+```
+[code here]
+
+```  
+__Additional Resources for Strongly Connected Components__  
+* Wikipedia: https://en.wikipedia.org/wiki/Strongly_connected_component  
+* GeeksforGeeks: http://www.geeksforgeeks.org/strongly-connected-components/  
+
+### Identify Connected Components  
+__Input:__ undirected graph G=(V,E)   
+__Output:__ conneted component of each vertex  
+__Structure:__  
+  1. call DFS  
+      * increment k (integer identifier) each time main `for` loop runs  
+      * assign cc[v]=k at start of DFS-Visit  
+
+__Maintains:__ 
+  * color[v] := status of each vertex  
+  * cc[v] := connected component of vertex  
+
+__Run-time:__ O(V+E)  
+
+#### Pseudocode for Identify Connected Components  
+<b>Identify-Connected-Components(G)</b>
+01 for each vertex v in V
+02 	color[v] = white
+03 	cc[v] = nil
+04 k = 0
+05 for each vertex u in V
+06 	if color[u] == white
+07 		k = k+1
+08 		DFS-Visit(G,u,k)
+09 return cc
+</code></pre>
+
+<pre><code>
+<b>DFS-Visit(G, u, k)</b>
+01 cc[u] = k
+02 color[u] = gray
+03 for each vertex v in adj[u]
+04 	if color[v] == white
+05 		DFS-Visit(G, v, k)
+06 color[u] = black
+</code></pre>
+#### Java for Identify Connected Components  
+```
+[code here]
+
+```  
+__Additional Resources for Identify Connected Components__  
+* Wikipedia: https://en.wikipedia.org/wiki/Connected-component_labeling  
+* GeeksforGeeks: http://www.geeksforgeeks.org/connected-components-in-an-undirected-graph/  
+
+
+
