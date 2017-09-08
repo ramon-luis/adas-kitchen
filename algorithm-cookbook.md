@@ -1259,6 +1259,7 @@ __Maintains:__
 __Run-time:__ O(V+E)  
 
 #### Pseudocode for Identify Connected Components  
+<pre><code>
 <b>Identify-Connected-Components(G)</b>
 01 for each vertex v in V
 02 	color[v] = white
