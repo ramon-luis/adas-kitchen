@@ -1176,6 +1176,7 @@ __Applications:__
   * sorting vertices into a "horizontal" line  
 
 #### Pseudocode for Topological Sort
+<pre><code>
 <b>Topological-Sort(G)</b>
 01 create new linked-list orderedList  // global variable
 02 DFS(G)
@@ -1228,6 +1229,7 @@ __Maintains:__ same as DFS: d[v], f[v], p[v], color[v], time
 __Run-time:__ O(V+E)  
 
 #### Pseudocode for Strongly Connected Components  
+<pre><code>
 <b>Strongly-Connected-Components(G)</b>
 01 DFS(G)
 02 G<sup>T</sup> = Transpose(G)
