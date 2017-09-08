@@ -103,7 +103,7 @@ __Input:__ unsorted array `A[1...n]`, left index `p`, right index `r`
 __Output:__ sorted array `A[1...n]`  
 __Structure:__ recursion, split array in half until single itm, then merge back together in sorted order  
 __Maintains:__ <code>q = &#8970;<sup>p+r</sup>&frasl;<sub>2</sub>&#8971;</code> for middle index of array  
-__Run-time:__ O(n lg n) where lg = log<sup>2</sup>  
+__Run-time:__ O(n lg n) where lg = log<sub>2</sub>  
 
 <blockquote>
 Recursive Call: 2 (<sup>n</sup>&frasl;<sub>2</sub>)<br />
@@ -157,7 +157,7 @@ __Run-time:__ O(n) // 3 `for` loops: n<sub>1</sub>, n<sub>2</sub>, `p to r = n`
 <b>Merge(A, p, q, r])</b> where A is <b>unsorted</b> array
 01 n<sub>1</sub> = q - p + 1  // p to q <em>inclusive</em> of q
 02 n<sub>2</sub> = r - q  // q to r <em>exclusive</em> of q
-03 L[1...n<sub>1</sub>+1], L[1...n<sub>2</sub>+1] are new arrays  // need extra memory allocation for sentinels
+03 L[1...n<sub>1</sub>+1], R[1...n<sub>2</sub>+1] are new arrays  // need extra memory allocation for sentinels
 04 for i=1 to n<sub>1</sub>  // fill L
 05 	L[i] = A[p+i-1]
 06 for j=1 to n<sub>2</sub>  // fill R
