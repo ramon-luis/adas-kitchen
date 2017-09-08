@@ -1,0 +1,2030 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  max-width: 980px;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 45px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headeranchor-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .headeranchor-link:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .headeranchor,
+.markdown-body h2 .headeranchor,
+.markdown-body h3 .headeranchor,
+.markdown-body h4 .headeranchor,
+.markdown-body h5 .headeranchor,
+.markdown-body h6 .headeranchor {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .headeranchor-link,
+.markdown-body h2:hover .headeranchor-link,
+.markdown-body h3:hover .headeranchor-link,
+.markdown-body h4:hover .headeranchor-link,
+.markdown-body h5:hover .headeranchor-link,
+.markdown-body h6:hover .headeranchor-link {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .headeranchor-link .headeranchor,
+.markdown-body h2:hover .headeranchor-link .headeranchor,
+.markdown-body h3:hover .headeranchor-link .headeranchor,
+.markdown-body h4:hover .headeranchor-link .headeranchor,
+.markdown-body h5:hover .headeranchor-link .headeranchor,
+.markdown-body h6:hover .headeranchor-link .headeranchor {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><title>algorithm-cookbook</title></head><body><article class="markdown-body"><h1 id="algorithm-cookbook"><a name="user-content-algorithm-cookbook" href="#algorithm-cookbook" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Algorithm Cookbook</h1>
+<p><a href="#runtime">Runtime</a><br />
+<a href="#sorting-algorithms">Sorting Algorithms</a><br />
+&nbsp;&nbsp;<a href="#insertion-sort">Insertion Sort</a><br />
+&nbsp;&nbsp;<a href="#merge-sort">Merge Sort</a><br />
+&nbsp;&nbsp;<a href="#merge">Merge</a><br />
+&nbsp;&nbsp;<a href="#quicksort">Quicksort</a><br />
+&nbsp;&nbsp;<a href="#partition">Partition</a><br />
+<a href="#search-and-select-algorithms">Search and Select Algorithms</a><br />
+&nbsp;&nbsp;<a href="#binary-search">Binary Search</a><br />
+&nbsp;&nbsp;<a href="#inversion-count">Inversion Count</a><br />
+&nbsp;&nbsp;<a href="#triple-count">Triple Count</a><br />
+&nbsp;&nbsp;<a href="#k-from-median">k From Median</a><br />
+&nbsp;&nbsp;<a href="#array-contains-integers-that-sum-to-x">Array Contains Integers That Sum to X</a><br />
+&nbsp;&nbsp;<a href="#k-largest-less-than-median">k Largest Less Than Median</a><br />
+<a href="#dynamic-programming-algorithms">Dynamic Programming Algorithms</a><br />
+<a href="#graph-algorithms">Graph Algorithms</a>  </p>
+<h2 id="runtime"><a name="user-content-runtime" href="#runtime" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Runtime</h2>
+<h3 id="master-theorem-for-runtime-on-recursive-algorithms"><a name="user-content-master-theorem-for-runtime-on-recursive-algorithms" href="#master-theorem-for-runtime-on-recursive-algorithms" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Master Theorem for Runtime on Recursive Algorithms</h3>
+<p><strong>T(n) = a * T(<sup>n</sup>&frasl;<sub>b</sub>) + O(n<sup>d</sup>)</strong>  </p>
+<ol>
+<li>Identify <code>a</code>, <code>b</code>, &ambp; <code>d</code>  </li>
+<li>Apply table below to solve for runtime  </li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Value of d</th>
+<th>T(n)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>d &gt; log<sub>b</sub> a</td>
+<td>O(n<sup>d</sup>)</td>
+</tr>
+<tr>
+<td>d = log<sub>b</sub> a</td>
+<td>O(n<sup>d</sup> lg n) where lg = log<sub>2</sub></td>
+</tr>
+<tr>
+<td>d &lt; log<sub>b</sub> a</td>
+<td>O(n<sup>log<sub>b</sub> a</sup>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Useful to remember:</strong><br />
+<em> O(n<sup>0</sup>) = O(1)<br />
+</em> log<sub>x</sub> x = 1<br />
+<em> log<sub>x</sub> 1 = 0<br />
+</em> O(n + a)<sup>b</sup> = O(n)<sup>b</sup>  </p>
+<h2 id="sorting-algorithms"><a name="user-content-sorting-algorithms" href="#sorting-algorithms" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Sorting Algorithms</h2>
+<p><a href="#insertion-sort">Insertion Sort</a><br />
+<a href="#merge-sort">Merge Sort</a><br />
+<a href="#merge">Merge</a><br />
+<a href="#quicksort">Quicksort</a><br />
+<a href="#partition">Partition</a>  </p>
+<h3 id="insertion-sort"><a name="user-content-insertion-sort" href="#insertion-sort" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Insertion Sort</h3>
+<p><strong>Input:</strong> unsorted array <code>A[1...n]</code> of size n<br />
+<strong>Output:</strong> sorted array <code>A[1...n]</code><br />
+<strong>Structure:</strong> uses <strong>two indices</strong> (i and j) and <strong>two loops</strong>: <code>for j=2 to n, while i&gt;0 and A[i]&lt;key</code><br />
+<strong>Maintains:</strong> <code>key=A[j]</code> for current value that is being inserted (i.e. sorted)<br />
+<strong>Run-time:</strong> O(n<sup>2</sup>)  </p>
+<h4 id="proof-for-insertion-sort"><a name="user-content-proof-for-insertion-sort" href="#proof-for-insertion-sort" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Proof for Insertion Sort</h4>
+<blockquote>
+<p><strong>Loop Invariant:</strong> at start of each <code>for</code> loop all elements in <code>A[1...j-1]</code> are sorted  </p>
+<p><strong>Base Case:</strong> at start <code>j=2</code> and <code>A[1...j-1] = A[1]</code> &#8756; single element is sorted  </p>
+<p><strong>Induction Hypothesis (IH):</strong> assume true for <code>j</code> when <code>2 &#8804; j &#8804; k</code>  </p>
+<p><strong>Inductive Step (IS):</strong> Consider when <code>j = k+1</code>. Item <code>j = k+1</code> is only inserted at <code>A[k+1]</code> if <code>A[j] &#8805; A[k]</code>. By IH <code>A[1...k]</code> is sorted, so this maintains sorted order. Otherwise if <code>A[j] &#8804; [k]</code>, then each element in <code>A[1...k]</code> is examined in reverse order until the i<sup>th</sup> element is found where <code>A[k+1=j] &gt; A[i]</code>. In the resulting array, <code>A[1...i]</code> is sorted, <code>A[i+1] = A[j]</code>, and <code>A[i+2...j-1]</code> is sorted. Therefore, sorted order is maintained.</p>
+</blockquote>
+<h4 id="pseudocode-for-insertion-sort"><a name="user-content-pseudocode-for-insertion-sort" href="#pseudocode-for-insertion-sort" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Insertion Sort</h4>
+<p><pre><code><br />
+<b>Insertion-Sort(A[1..n])</b> where A is <b>unsorted</b> array<br />
+01 for j=2 to n<br />
+02  key = A[j]<br />
+03  i = j-1<br />
+04  while i&gt;0 and A[i]&gt;key<br />
+05      A[i+1] = A[i]<br />
+06      i = i-1<br />
+07  A[i+1] = key<br />
+</pre></code></p>
+<h4 id="java-for-insertion-sort"><a name="user-content-java-for-insertion-sort" href="#java-for-insertion-sort" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Insertion Sort</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Insertion Sort</strong><br />
+<em> Wikipedia: <a href="https://en.wikipedia.org/wiki/Insertion_sort"><a href="https://en.wikipedia.org/wiki/Insertion_sort">https://en.wikipedia.org/wiki/Insertion_sort</a></a><br />
+</em> GeeksforGeeks: <a href="http://www.geeksforgeeks.org/insertion-sort/">http://www.geeksforgeeks.org/insertion-sort/</a><br />
+* Toptal: <a href="https://www.toptal.com/developers/sorting-algorithms/insertion-sort">https://www.toptal.com/developers/sorting-algorithms/insertion-sort</a>  </p>
+<h3 id="merge-sort"><a name="user-content-merge-sort" href="#merge-sort" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Merge Sort</h3>
+<p><strong>Input:</strong> unsorted array <code>A[1...n]</code>, left index <code>p</code>, right index <code>r</code><br />
+<strong>Output:</strong> sorted array <code>A[1...n]</code><br />
+<strong>Structure:</strong> recursion, split array in half until single itm, then merge back together in sorted order<br />
+<strong>Maintains:</strong> <code>q = &#8970;<sup>p+r</sup>&frasl;<sub>2</sub>&#8971;</code> for middle index of array<br />
+<strong>Run-time:</strong> O(n lg n) where lg = log<sup>2</sup>  </p>
+<blockquote>
+Recursive Call: 2 (<sup>n</sup>&frasl;<sub>2</sub>)<br />
+Merge Call: O(n)<br />
+Total Runtime: T(n) = 2 (<sup>n</sup>&frasl;<sub>2</sub>) + O(n)<br />
+Reduce: apply Master Theorem where a=2, b=2, d=1 to arrive at O(n lg n) where lg = log<sup>2</sup>
+</blockquote>
+
+<h4 id="pseudocode-for-merge-sort"><a name="user-content-pseudocode-for-merge-sort" href="#pseudocode-for-merge-sort" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Merge Sort</h4>
+<p><pre><code><br />
+<b>Merge-Sort(A[1..n], p, r])</b> where A is <b>unsorted</b> array<br />
+01 if p &lt; r<br />
+02  q = &#8970;<sup>p+r</sup>&frasl;<sub>2</sub>&#8971;<br />
+03  MergeSort(A, p, q)<br />
+04  MergeSort(A, q+1, r)<br />
+05  Merge(A, p, q, r)<br />
+</code></pre></p>
+<h4 id="java-for-merge-sort"><a name="user-content-java-for-merge-sort" href="#java-for-merge-sort" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Merge Sort</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Merge Sort</strong><br />
+<em> Wikipedia: <a href="https://en.wikipedia.org/wiki/Merge_sort"><a href="https://en.wikipedia.org/wiki/Merge_sort">https://en.wikipedia.org/wiki/Merge_sort</a></a><br />
+</em> GeeksforGeeks: <a href="http://www.geeksforgeeks.org/merge-sort/">http://www.geeksforgeeks.org/merge-sort/</a><br />
+* Toptal: <a href="https://www.toptal.com/developers/sorting-algorithms/merge-sort">https://www.toptal.com/developers/sorting-algorithms/merge-sort</a>  </p>
+<h3 id="merge"><a name="user-content-merge" href="#merge" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Merge</h3>
+<p><strong>Input:</strong><br />
+Either:<br />
+  * Two <strong>sorted</strong> arrays A<sub>1</sub> and A<sub>2</sub> or<br />
+  * Single array with markers: left index <code>p</code>, middle index <code>q</code>, right index <code>r</code>  </p>
+<p><strong>Output:</strong> single sorted array (input arrays combined)<br />
+<strong>Structure:</strong><br />
+  1. creates copies of input arrays with sentinels added to each input array<br />
+  2. loops <code>for k=p to r</code> and updates <code>A[k]</code> to min value of L &amp; R  </p>
+<p><strong>Maintains:</strong><br />
+  * <code>n<sub>1</sub> = q - p + 1</code>  to track section of input array<br />
+  * <code>n<sub>2</sub> = r - q</code> to track remaining section of input array<br />
+  * <code>L[1&hellip;n<sub>1</sub> + 1], R[1&hellip;n<sub>2</sub> + 1]</code> for copies of input array with extra data location for sentinels<br />
+  * <code>i=1, j=1</code> for markers for location in L &amp; R during (k = p to r) loop  </p>
+<p><strong>Run-time:</strong> O(n) // 3 <code>for</code> loops: n<sub>1</sub>, n<sub>2</sub>, <code>p to r = n</code></p>
+<h4 id="pseudocode-for-merge"><a name="user-content-pseudocode-for-merge" href="#pseudocode-for-merge" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Merge</h4>
+<p><pre><code><br />
+<b>Input: Single array with markers to sub-divide</b><br />
+<b>Merge(A, p, q, r])</b> where A is <b>unsorted</b> array<br />
+01 n<sub>1</sub> = q - p + 1  // p to q <em>inclusive</em> of q<br />
+02 n<sub>2</sub> = r - q  // q to r <em>exclusive</em> of q<br />
+03 L[1&hellip;n<sub>1</sub>+1], L[1&hellip;n<sub>2</sub>+1] are new arrays  // need extra memory allocation for sentinels<br />
+04 for i=1 to n<sub>1</sub>  // fill L<br />
+05  L[i] = A[p+i-1]<br />
+06 for j=1 to n<sub>2</sub>  // fill R<br />
+07  R[j] = A[q+j]<br />
+08 L[n<sub>1</sub>+1] = &#8734;  // add sentinel<br />
+09 R[n<sub>2</sub>+1] = &#8734;  // add sentinel<br />
+10 i=1, j=1 // reset i &amp; j<br />
+11 for k=p to r  // loop and assign min value<br />
+12  if L[i] &#8804; R[j]<br />
+13      A[k] = L[i]<br />
+14      i = i+1<br />
+15  else<br />
+16      A[k] = R[j]<br />
+17      j = j+1<br />
+</code></pre></p>
+<pre><code>
+<b>Input: Two sorted arrays</b>
+<b>Merge(A<sub>1</sub>[1...m], A<sub>2</sub>[1...n])</b> where A<sub>1</sub> and A<sub>2</sub> are <b>sorted</b> arrays
+01 L[1...m+1], R[1...n+1], A[1...m+n] are new arrays  // need extra memory allocation for sentinels
+02 for i=1 to m  // fill L
+03  L[i] = A<sub>1</sub>[i]
+04 for j=1 to n  // fill R
+05  R[j] = A<sub>2</sub>[j]
+06 L[m+1] = &#8734;  // add sentinel
+07 R[n+1] = &#8734;  // add sentinel
+08 i=1, j=1 // reset i &amp; j
+09 for k=1 to (m+n)
+10  if L[i] &#8804; R[j]
+11      A[k] = L[i]
+12      i = i+1
+13  else
+14      A[k] = R[j]
+15      j = j+1
+16 return A
+</code></pre>
+
+<h4 id="java-for-merge"><a name="user-content-java-for-merge" href="#java-for-merge" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Merge</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Merge Sort</strong><br />
+<em> Wikipedia: <a href="https://en.wikipedia.org/wiki/Merge_algorithm"><a href="https://en.wikipedia.org/wiki/Merge_algorithm">https://en.wikipedia.org/wiki/Merge_algorithm</a></a> <br />
+</em> GeeksforGeeks: <a href="http://www.geeksforgeeks.org/merge-two-sorted-arrays/">http://www.geeksforgeeks.org/merge-two-sorted-arrays/</a>  </p>
+<h3 id="quicksort"><a name="user-content-quicksort" href="#quicksort" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quicksort</h3>
+<p><strong>Input:</strong> unsorted array A[1&hellip;n], left index p, right index r<br />
+<strong>Output:</strong> sorted array A[1&hellip;n]<br />
+<strong>Structure:</strong><br />
+  1. Partitions (semi-sorts) last item in array <code>q</code><br />
+  2. Recursively calls itself on lower and upper parts of array aroud <code>q</code> (sorted partition element)<br />
+  3. If <b>randomized</b>, then partition call is to <code>Randomized-Partition</code>  </p>
+<p><strong>Maintains:</strong>  single element that is in sorted position, marked as either:<br />
+  * <code>q = Partition(A, p, r)</code> or<br />
+  * <code>q = Randomized-Partition(A, p, r)</code>  </p>
+<p><strong>Run-time:</strong><br />
+  * Worst Case: O(n<sup>2</sup>) for both non-randomized and randomized<br />
+  * Expected Case: O(n lg n) for <b>randomized only</b> where lg = log<sub>2</sub>  </p>
+<h4 id="pseudocode-for-quicksort"><a name="user-content-pseudocode-for-quicksort" href="#pseudocode-for-quicksort" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Quicksort</h4>
+<p><pre><code><br />
+<b>Quicksort(A[1&hellip;n], p, r)</b> where A is <b>unsorted</b> array<br />
+01 if p &lt; r<br />
+02  q = Partition(A, p, r)  // T(n) = O(n)<br />
+03  Quicksort(A, p, q-1)  // T(n) ranges from O(n lg n) to O(n<sup>2</sup>)<br />
+04  Quicksort(A, q+1, r)  // T(n) ranges from O(n lg n) to O(n<sup>2</sup>)<br />
+</code></pre></p>
+<pre><code>
+<b>Random-Quicksort(A[1...n], p, r)</b> where A is <b>unsorted</b> array
+01 if p &lt; r
+02  q = Random-Partition(A, p, r)  // T(n) = O(n)
+03  Random-Quicksort(A, p, q-1)  // T(n) ranges from O(n lg n) to O(n<sup>2</sup>)
+04  Random-Quicksort(A, q+1, r)  // T(n) ranges from O(n lg n) to O(n<sup>2</sup>)
+</code></pre>
+
+<pre><code>
+<b>Random-Partition(A, p, r)</b> where A is <b>unsorted</b> array
+01 x = Random(p,r)  // random index between p and r inclusive
+02 exchange A[x] and A[r]
+03 return Partition(A, p, r)
+</code></pre>
+
+<h4 id="java-for-quicksort"><a name="user-content-java-for-quicksort" href="#java-for-quicksort" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Quicksort</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Quicksort</strong><br />
+<em> Wikipedia: <a href="https://en.wikipedia.org/wiki/Quicksort"><a href="https://en.wikipedia.org/wiki/Quicksort">https://en.wikipedia.org/wiki/Quicksort</a></a><br />
+</em> GeeksforGeeks: <a href="http://www.geeksforgeeks.org/quick-sort/">http://www.geeksforgeeks.org/quick-sort/</a><br />
+* Toptal: <a href="https://www.toptal.com/developers/sorting-algorithms/quick-sort">https://www.toptal.com/developers/sorting-algorithms/quick-sort</a>  </p>
+<h3 id="partition"><a name="user-content-partition" href="#partition" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Partition</h3>
+<p><strong>Input:</strong> unsorted array A[1&hellip;n], left index p, right index r<br />
+<strong>Output:</strong> the <strong>index</strong> of sorted pivot element with array <em>semi-sorted</em> around it<br />
+<strong>Structure:</strong><br />
+  1. Marks pivot element <code>x = A[r]</code><br />
+  2. Marks <code>i = p-1</code> at outer left of array<br />
+  3. Loops <code>for j = p to r-1</code><br />
+    * Swaps elements so that <code>A[1&hellip;i] &lt; x &lt; A[i+1&hellip;j-1]</code>  </p>
+<p><strong>Loop Invariant:</strong>  At the start of each <code>for</code> loop:<br />
+  * all elements in <code>A[p&hellip;1] &#8804; x</code><br />
+  * all elements in <code>A[i+1&hellip;j-1] &gt; x</code><br />
+  * all elements in <code>A[j...r-1]</code> are unsorted  </p>
+<p><strong>INSERT DIAGRAM HERE</strong></p>
+<p><strong>Run-time:</strong> O(n) // loops through each element once</p>
+<p>What does Partition return if all elements are equal in value? <strong>i+1 = r</strong></p>
+<h4 id="pseudocode-for-partition"><a name="user-content-pseudocode-for-partition" href="#pseudocode-for-partition" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Partition</h4>
+<p><pre><code><br />
+<b>Partition(A, p, r)</b> where A is <b>unsorted</b> array<br />
+01 x = A[r]  // set pivot<br />
+02 i = p-1  // set left marker i outside of p<br />
+03 for j=p to r-1  // loop from p to pivot<br />
+04  if A[j] &#8804; A[i]<br />
+05      i = i+1<br />
+06      exchange A[i], A[j]<br />
+07 exchange A[i+1], A[r]  // swap pivot<br />
+08 return i+1  // return pivot index<br />
+</code></pre></p>
+<h4 id="java-for-partition"><a name="user-content-java-for-partition" href="#java-for-partition" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Partition</h4>
+<pre><code>[code here]
+
+</code></pre>
+
+<h2 id="search-and-select-algorithms"><a name="user-content-search-and-select-algorithms" href="#search-and-select-algorithms" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Search and Select Algorithms</h2>
+<p><a href="#binary-search">Binary Search</a><br />
+<a href="#inversion-count">Inversion Count</a><br />
+<a href="#triple-count">Triple Count</a><br />
+<a href="#k-from-median">k From Median</a><br />
+<a href="#array-contains-integers-that-sum-to-x">Array Contains Integers That Sum to X</a><br />
+<a href="#k-largest-less-than-median">k Largest Less Than Median</a>  </p>
+<h3 id="binary-search"><a name="user-content-binary-search" href="#binary-search" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Binary Search</h3>
+<p><strong>Input:</strong> a <strong>sorted</strong> array, value <code>x</code> to find<br />
+<strong>Output:</strong> the <strong>index position</strong> of value <code>x</code> in array<br />
+<strong>Structure:</strong>  checks middle element and recursively searches left or right as appropriate<br />
+<strong>Run-time:</strong> O(lg n) where lg = log<sub>2</sub>  </p>
+<p><strong>IMPORTANT:</strong> Always <strong>SORT</strong> before using Binary Search!  </p>
+<h4 id="pseudocode-for-binary-search"><a name="user-content-pseudocode-for-binary-search" href="#pseudocode-for-binary-search" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Binary Search</h4>
+<p><pre><code><br />
+<b>Binary-Search(A, x)</b> where A is a <b>SORTED</b> array<br />
+01 return Recursive-Search(A, 1, n, x)  // initial call, assumes 1 is left-most index<br />
+</code></pre></p>
+<pre><code>
+<b>Recursive-Search(A, p, r, x)</b> where A is a <b>SORTED</b> array, p and r are left and right markers, and x is element to find within A
+01 if p == r and A[p] == x  \\ single element in array
+02  return p
+03 if p &lt; r
+04  q = &#8970;<sup>p+r</sup>&frasl;<sub>2</sub>&#8971;
+05  if A[q] == x
+06      return q  // found x
+07  if x &lt; A[q]
+08      return Recursive-Search(A, p, q, x)  \\ x is located in L half
+09  else 
+10      return Recursive-Search(A, <b>q+1</b>, r, x)  \\ x is located in R half, careful to use <b>q+1</b>
+11 return -1  // x not found
+</code></pre>
+
+<h4 id="java-for-binary-search"><a name="user-content-java-for-binary-search" href="#java-for-binary-search" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Binary Search</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Binary Search</strong><br />
+<em> Wikipedia: <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm"><a href="https://en.wikipedia.org/wiki/Binary_search_algorithm">https://en.wikipedia.org/wiki/Binary_search_algorithm</a></a><br />
+</em> GeeksforGeeks: <a href="http://www.cdn.geeksforgeeks.org/binary-search/">http://www.cdn.geeksforgeeks.org/binary-search/</a><br />
+* Khan Academy: <a href="https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search">https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search</a>  </p>
+<h3 id="select"><a name="user-content-select" href="#select" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Select</h3>
+<p><strong>Input:</strong> unsorted array A, <strong>order statistic i</strong> that seeks <b>i<sup>th</sup> smallest element</b> (1 &#8804; i &#8804;<br />
+ n)<br />
+<strong>Output:</strong> the <strong>value</strong> of the i<sup>th</sup> smallest element (i.e. the element x that is larger than exactly i-1 other elements)<br />
+<strong>Structure:</strong><br />
+  1. Partitions to semi-sort an element (random or median of medians)<br />
+  2. Partition returns an index:<br />
+      * if the index matches <code>i</code> then return that value<br />
+      * else recursively call on upper or lower half as appropriate  </p>
+<p><strong>Run-time:</strong> <br />
+  * Worst Case for Randomized-Select: O(n<sup>2</sup>)<br />
+  * Expected Case for Randomized-Select: O(n)<br />
+  * Worse Case for Deterministic-Select: O(n)  </p>
+<h4 id="pseudocode-for-select"><a name="user-content-pseudocode-for-select" href="#pseudocode-for-select" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Select</h4>
+<p><pre><code><br />
+<b>Random-Select(A, p, r, i)</b> where A is <b>unsorted</b> array<br />
+01 if p == r<br />
+02  return A[p]<br />
+03 q = Random-Partition(A, p, r)<br />
+04 k = q - p + 1  // <b>important: # of elements in (q-p) inclusive (i.e. L half)</b><br />
+05 if k == i  // found i<sup>th</sup> element since A[q] is sorted pivot<br />
+06  return A[q]<br />
+07 if i &lt; k  // i<sup>th</sup> element is less than pivot and in L<br />
+08  return Random-Select(A, p, q-1, i)<br />
+09 else  // i<sup>th</sup> element is greater than pivot and in R<br />
+10  return Random-Select(A, q+1, r, i-k)  // <b>important: adjust i when searching right</b><br />
+</code></pre>  </p>
+<pre><code>
+<b>Select(A, i)</b>
+01 use median of medians to partition
+02 return i<sup>th</sup> smallest value in A
+</code></pre>
+
+<h4 id="java-for-select"><a name="user-content-java-for-select" href="#java-for-select" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Select</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Select</strong>  <br />
+<em> Wikipedia for QuickSelect:  <a href="https://en.wikipedia.org/wiki/Quickselect"><a href="https://en.wikipedia.org/wiki/Quickselect">https://en.wikipedia.org/wiki/Quickselect</a></a><br />
+</em> Wikipedia for Median of Medians: <a href="https://en.wikipedia.org/wiki/Median_of_medians">https://en.wikipedia.org/wiki/Median_of_medians</a><br />
+* GeeksforGeeks: <a href="http://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/">http://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/</a>  </p>
+<h3 id="inversion-count"><a name="user-content-inversion-count" href="#inversion-count" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Inversion Count</h3>
+<p><strong>Input:</strong> unsorted array A[1&hellip;n]<br />
+<strong>Output:</strong> the number of inversions where A[i] &gt; A[j] and i &lt; j<br />
+<strong>Structure:</strong>  modify Merge-Sort, anything from R before L is empty in an inversion of <code>(q-p+1) - (i-1)</code><br />
+<strong>Run-time:</strong> O(n lg n) same as Merge Sort  </p>
+<h4 id="pseudocode-for-inversion-count"><a name="user-content-pseudocode-for-inversion-count" href="#pseudocode-for-inversion-count" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Inversion Count</h4>
+<p><pre><code><br />
+<b>Inversion-Count(A)</b> where A is <b>unsorted</b> array<br />
+01 inversionCount = 0  // global variable<br />
+02 Merge-Sort(A, 1, n)  // call Merge Sort on entire array<br />
+03 return inversionCount<br />
+</code></pre>  </p>
+<pre><code>
+<b>Merge-Sort(A, p, r)</b>
+01 if p &lt; r  // standard algo with call to Merge()
+...
+...
+05  Merge(A, p, q, r)
+</code></pre>
+
+<pre><code>
+<b>Merge(A, p, q, r])</b>  // modified to count inversions
+01 n<sub>1</sub> = q - p + 1  // p to q <em>inclusive</em> of q
+02 n<sub>2</sub> = r - q  // q to r <em>exclusive</em> of q
+03 L[1...n<sub>1</sub>+1], L[1...n<sub>2</sub>+1] are new arrays  // need extra memory allocation for sentinels
+04 for i=1 to n<sub>1</sub>  // fill L
+05  L[i] = A[p+i-1]
+06 for j=1 to n<sub>2</sub>  // fill R
+07  R[j] = A[q+j]
+08 L[n<sub>1</sub>+1] = &#8734;  // add sentinel
+09 R[n<sub>2</sub>+1] = &#8734;  // add sentinel
+10 i=1, j=1 // reset i &amp; j
+11 for k=p to r  // loop and count inversions before sorting
+12  if L[i] &gt; R[j] and L[i] != &#8734;  // <b>inversion found</b>
+13      inversionCount = inversionCount + (q-p+1) - (i-1)  // <b>update inversion count</b>
+12  if L[i] &#8804; R[j]  // continue with standard sorting
+13      A[k] = L[i]
+14      i = i+1
+15  else
+16      A[k] = R[j]
+17      j = j+1
+</code></pre>
+
+<h4 id="java-for-inversion-count"><a name="user-content-java-for-inversion-count" href="#java-for-inversion-count" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Inversion Count</h4>
+<pre><code>[code here]
+
+</code></pre>
+
+<h3 id="triple-count"><a name="user-content-triple-count" href="#triple-count" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Triple Count</h3>
+<p><strong>Input:</strong> an <strong>unsorted</strong> array A[1&hellip;n] consisting of distinct integers<br />
+<strong>Output:</strong> the count of <em>triples</em> in array where 3 numbers sum to zero<br />
+<strong>Idea:</strong> sort array, then take every pair of numbers and run <strong>binary search</strong> to find 3rd value<br />
+<strong>Run-time:</strong> O(n<sup>2</sup> lg n)  // Binary-Search (lg n) called on double loop (n<sup>2</sup>)</p>
+<h4 id="pseudocode-for-triple-count"><a name="user-content-pseudocode-for-triple-count" href="#pseudocode-for-triple-count" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Triple Count</h4>
+<p><pre><code><br />
+<b>Triple-Count(A[1&hellip;n])</b> where A is <b>unsorted</b> array<br />
+01 Merge-Sort(A)  // need to sort before we can use Binary-Search<br />
+02 tripleCount = 0<br />
+03 for i=1 to n-1  // loop through all pairs from left to right<br />
+04  for j=2 to n<br />
+05      x = A[i]<br />
+06      y = A[j]<br />
+07      z = -(x+y)  // x + y + z = 0, therefore z = -(x+y)<br />
+08      if Binary-Search(A,z) != -1  // Binary-Search found a match, therefore triple exists<br />
+09          tripleCount = tripleCount + 1<br />
+10 return tripleCount<br />
+</code></pre>  </p>
+<h4 id="java-for-triple-count"><a name="user-content-java-for-triple-count" href="#java-for-triple-count" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Triple Count</h4>
+<pre><code>[code here]
+
+</code></pre>
+
+<h3 id="k-from-median"><a name="user-content-k-from-median" href="#k-from-median" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>k From Median</h3>
+<p><strong>Input:</strong> an <strong>unsorted</strong> array A[1&hellip;n] and positive integer k &#8804; n<br />
+<strong>Output:</strong> k numbers closest in <strong>value</strong> to the median of <br />
+<strong>Idea:</strong><br />
+  * find median<br />
+  * create new array D to store the absolute distance from median for each element in A (with same index)<br />
+  * copy A to A&rsquo; and call Select(A&rsquo;, k) to find k<sup>th</sup> value.<br />
+    * need to use A&rsquo; because Select will semi-sort the array<br />
+  * Check values in D: if &#8804; k<sup>th</sup>, then return original value stored in A  </p>
+<p><strong>Run-time:</strong>  </p>
+<h4 id="pseudocode-for-k-from-median"><a name="user-content-pseudocode-for-k-from-median" href="#pseudocode-for-k-from-median" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for k From Median</h4>
+<p><pre><code><br />
+<b>K-From-Median(A, k)</b> where A is <b>unsorted</b> array<br />
+01 medianIndex = &#8970;<sup>n</sup>&frasl;<sub>2</sub>&#8971;<br />
+02 medianValue = Select(A, medianIndex)<br />
+03 D is new array<br />
+04 for i=1 to n<br />
+05  D[i] = |A[i] - medianValue|  // distance from median value<br />
+06 copy D to K<br />
+07 kValue = Select(K, kValue)<br />
+08 for i=1 to n<br />
+09  if D[i] &#8804; kValue<br />
+10      print A[i]<br />
+</code></pre>  </p>
+<h4 id="java-for-k-from-median"><a name="user-content-java-for-k-from-median" href="#java-for-k-from-median" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for k From Median</h4>
+<pre><code>[code here]
+
+</code></pre>
+
+<h3 id="array-contains-integers-that-sum-to-x"><a name="user-content-array-contains-integers-that-sum-to-x" href="#array-contains-integers-that-sum-to-x" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Array Contains Integers That Sum to X</h3>
+<p><strong>Input:</strong> an <strong>unsorted</strong> array A[1&hellip;n] of distinct integers and target sum integer x<br />
+<strong>Output:</strong> True/False if array contains two integers that sum to x<br />
+<strong>Idea:</strong><br />
+  * x = y + z<br />
+  * x = y + A[i]<br />
+  * we are given x and know A[i], therefore need to search for y = x - A[i]<br />
+  * sort, then use Binary-Search  </p>
+<p><strong>Run-time:</strong>  O(n lg n)  // Binary-Search (lg n) called on all elements (n)  </p>
+<h4 id="pseudocode-for-array-contains-integers-that-sum-to-x"><a name="user-content-pseudocode-for-array-contains-integers-that-sum-to-x" href="#pseudocode-for-array-contains-integers-that-sum-to-x" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Array Contains Integers That Sum to X</h4>
+<p><pre><code><br />
+<b>Has-Integer-Sum(A[1&hellip;n], x)</b> where A is <b>unsorted</b> array<br />
+01 Merge-Sort(A)  // <b>important: sort first so we can use BinarySearch</b><br />
+02 for i=1 to n<br />
+03  y = x - A[i]<br />
+04  if Binary-Search(A, y) != 1  // found a match, T(n) = O(lg n)<br />
+05      return true<br />
+06 return false<br />
+</code></pre>  </p>
+<h4 id="java-for-array-contains-integers-that-sum-to-x"><a name="user-content-java-for-array-contains-integers-that-sum-to-x" href="#java-for-array-contains-integers-that-sum-to-x" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Array Contains Integers that Sum to X</h4>
+<pre><code>[code here]
+</code></pre>
+
+<h3 id="k-largest-less-than-median"><a name="user-content-k-largest-less-than-median" href="#k-largest-less-than-median" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>k Largest Less Than Median</h3>
+<p><strong>Input:</strong> an <strong>unsorted</strong> array A[1&hellip;n] of distinct integers and positive integer k &lt; <sup>n</sup>&frasl;<sub>2</sub><br />
+<strong>Output:</strong> k largest numbers in A that are less than the median<br />
+<strong>Idea:</strong><br />
+  * find median<br />
+  * use select to roughly sort and get small values below median<br />
+  * use select to roughly sort again and get m-k values below m-k index<br />
+  * values in m-k to median should be grouped accordingly  </p>
+<p><strong>Run-time:</strong>  O(n)  </p>
+<h4 id="pseudocode-for-k-largest-less-than-median"><a name="user-content-pseudocode-for-k-largest-less-than-median" href="#pseudocode-for-k-largest-less-than-median" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for k Largest Less Than Median</h4>
+<p><pre><code><br />
+<b>Get-K-Largest-Less-Than-Median(A, k)</b> where A is <b>unsorted</b> array<br />
+01 m = &#8970;<sup>n+1</sup>&frasl;<sub>2</sub>&#8971;  // index of median<br />
+02 d = Select(A, m)  // dummy value, <em>semi-sorts</em> to get small values below median<br />
+03 d = Select(A, m-k-1)  // dummy value, <em>semi-sorts</em> to get m-k values below m-k<br />
+04 return A[m-k&hellip;m-1]<br />
+</code></pre>  </p>
+<h4 id="java-for-k-largest-less-than-median"><a name="user-content-java-for-k-largest-less-than-median" href="#java-for-k-largest-less-than-median" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for k Largest Less Than Median</h4>
+<pre><code>[code here]
+</code></pre>
+
+<h2 id="dynamic-programming-algorithms"><a name="user-content-dynamic-programming-algorithms" href="#dynamic-programming-algorithms" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Dynamic Programming Algorithms</h2>
+<p><a href="#general-tips-for-dynamic-programming">General Tips for Dynamic Programming</a><br />
+<a href="#knapsack-problem">Knapsack Problem</a><br />
+<a href="#longest-common-subsequence">Longest Common Subsequence</a><br />
+<a href="#longest-common-substring">Longest Common Substring</a><br />
+<a href="#rod-cutting">Rod Cutting</a><br />
+<a href="#max-interval-sum">Max Interval Sum</a><br />
+<a href="#subset-sum-exists">Subset Sum Exists</a><br />
+<a href="#assembly-line">Assembly Line</a><br />
+<a href="#can-make-change">Can Make Change</a><br />
+<a href="#minimum-coins-needed">Minimum Coins Needed</a><br />
+<a href="#can-partition-array-into-equal-sums">Can Partition Array Into Equal Sums</a></p>
+<h3 id="general-tips-for-dynamic-programming"><a name="user-content-general-tips-for-dynamic-programming" href="#general-tips-for-dynamic-programming" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>General Tips for Dynamic Programming</h3>
+<ul>
+<li>try to identify sequence of steps -&gt; <strong>focus on last/incremental step</strong></li>
+<li>use previous steps/calculations to arrive at specific point</li>
+<li>breakdown information:<br />
+  1. subproblem: in words<br />
+  2. recurrence: equation -&gt; <strong>ALWAYS SOLVE BASE CASES</strong></li>
+<li>assume you are ending or doing something at A[k]</li>
+<li>consider transforming data and applying known algorithm solution</li>
+<li>for <strong>contiguous subsequence</strong> problems examine <strong>subproblems that end at i/j</strong></li>
+</ul>
+<h3 id="knapsack-problem"><a name="user-content-knapsack-problem" href="#knapsack-problem" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Knapsack Problem</h3>
+<p><strong>Input:</strong><br />
+  * w<sub>1</sub>,&hellip;,w<sub>n</sub> weight of each item<br />
+  * v<sub>1</sub>,&hellip;,v<sub>n</sub> value of each item<br />
+  * W max weight limit  </p>
+<p><strong>Output:</strong> max possible value that fits into backpack within constraint W<br />
+<strong>Idea:</strong>  i<sup>th</sup> object has 2 possibilities:<br />
+  1. object exceeds weight limit -&gt; use max value of objects before i<sup>th</sup> object considered<br />
+  2. object fits under weight limit:<br />
+      * more value <strong>with</strong> object -&gt; add i<sup>th</sup> value to max value of i-1 objects at weight limit of w<sub>j</sub>-w<sub>i</sub><br />
+      * more value <strong>without</strong> obect -&gt; use max value of i-1 objects at same weight limit  </p>
+<p><strong>Subproblem:</strong>  M[i,j] = max possible value using v[1&hellip;i] and weights w[1&hellip;i] where &#8721;W &#8804; j<br />
+<strong>Recurrence:</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>cell</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M[i, j] =</code></td>
+<td><b>if</b> <code>w&lt;sub&gt;i&lt;/sub&gt; &amp;#8804; j</code>, <b>then</b> <code>max { v&lt;sub&gt;i&lt;/sub&gt; + M[i-1, j-w[i]], M[i-1, j] }</code></td>
+</tr>
+<tr>
+<td></td>
+<td><b>else:</b> <code>M[i-1, j]</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Base Case:</strong><br />
+  * <code>M[i, 0] = 0  // no items at weight limit 0</code><br />
+  * <code>M[0, j] = 0  // no items if 0 items allowed</code>  </p>
+<p><strong>Run-time:</strong>  T(n, W) = O(n * W)  </p>
+<h4 id="pseudocode-for-knapsack-problem"><a name="user-content-pseudocode-for-knapsack-problem" href="#pseudocode-for-knapsack-problem" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Knapsack Problem</h4>
+<p><pre><code><br />
+<b>Max-Value-In-Knapsack(w<sub>1</sub>,&hellip;,w<sub>n</sub>,v<sub>1</sub>,&hellip;,v<sub>n</sub>, W)</b><br />
+01 create table M[0&hellip;n, 0&hellip;W]<br />
+02 for i=0 to n<br />
+03  M[i,0] = 0<br />
+04 for j=0 to W<br />
+05  M[0,j] = 0<br />
+06 for i=1 to n<br />
+07  for j=1 to W<br />
+08      if w[i] &#8804; j<br />
+09          M[i,j] = max{ v[i] + M[i-1, j-w[i]], M[i-1, j] }<br />
+10      else<br />
+11          M[i,j] = M[i-1, j]<br />
+12 return M[n,W]<br />
+</code></pre>  </p>
+<h4 id="java-for-knapsack-problem"><a name="user-content-java-for-knapsack-problem" href="#java-for-knapsack-problem" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Knapsack Problem</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Knapsack Problem</strong><br />
+<em> Wikipedia: <a href="https://en.wikipedia.org/wiki/Knapsack_problem"><a href="https://en.wikipedia.org/wiki/Knapsack_problem">https://en.wikipedia.org/wiki/Knapsack_problem</a></a><br />
+</em> GeeksforGeeks: <a href="http://www.geeksforgeeks.org/knapsack-problem/">http://www.geeksforgeeks.org/knapsack-problem/</a>  </p>
+<h3 id="longest-common-subsequence"><a name="user-content-longest-common-subsequence" href="#longest-common-subsequence" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Longest Common Subsequence</h3>
+<p><strong>Input:</strong>  two strings X[1&hellip;m], Y[1&hellip;n]<br />
+<strong>Output:</strong> the <strong>length</strong> of the longest common subsequence (same order of letters, not necessarily contiguous)<br />
+<strong>Idea:</strong>  adding i<sup>th</sup> letter to compare X[1&hellip;i] and Y[1&hellip;j] has 2 possibilities:<br />
+  1. if X[i] matches Y[j] then there is one more longer subsequence compared to X[1&hellip;i-1] and Y[1&hellip;j-1]<br />
+  2. otherwise same length subsequence as either X[1&hellip;i-1], Y[1&hellip;j] or X[1&hellip;i], Y[1&hellip;j-1]  </p>
+<p><strong>Subproblem:</strong>  M[i,j] = length of longest possible subsequence for X[1&hellip;i] and Y[1&hellip;j]<br />
+<strong>Recurrence:</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>cell</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M[i, j] =</code></td>
+<td><b>if</b> <code>X[i] == Y[j]</code>, <b>then</b> <code>M[i-1, j-1] + 1</code></td>
+</tr>
+<tr>
+<td></td>
+<td><b>else:</b> <code>max{ M[i-1, j], M[i, j-1] }</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Base Case:</strong><br />
+  * <code>M[i, 0] = 0  // can't make a subsequence with zero letters</code>  <br />
+  * <code>M[0, j] = 0  // can't make a subsequence with zero letters</code>   </p>
+<p><strong>Run-time:</strong>  T(m, n) = O(m * n)  </p>
+<h4 id="pseudocode-for-longest-common-subsequence"><a name="user-content-pseudocode-for-longest-common-subsequence" href="#pseudocode-for-longest-common-subsequence" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Longest Common Subsequence</h4>
+<p><pre><code><br />
+<b>Longest-Common-Subsequence(X[1&hellip;m], Y[1&hellip;n])</b><br />
+01 create table M[0&hellip;m, 0&hellip;n]<br />
+02 for i=0 to m<br />
+03  M[i,0] = 0<br />
+04 for j=0 to n<br />
+05  M[0,j] = 0<br />
+06 for i=1 to m<br />
+07  for j=1 to n<br />
+08      if X[i] == Y[j]<br />
+09          M[i,j] = M[i-1, j-1] + 1<br />
+10      else<br />
+11          M[i,j] = max{ M[i-1, j], M[i, j-1]}<br />
+12 return M[m,n]<br />
+</code></pre>  </p>
+<h4 id="java-for-longest-common-subsequence"><a name="user-content-java-for-longest-common-subsequence" href="#java-for-longest-common-subsequence" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Longest Common Subsequence</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Longest Common Subsequence</strong><br />
+<em> Wikipedia: <a href="https://en.wikipedia.org/wiki/Longest_common_subsequence_problem"><a href="https://en.wikipedia.org/wiki/Longest_common_subsequence_problem">https://en.wikipedia.org/wiki/Longest_common_subsequence_problem</a></a> <br />
+</em> GeeksforGeeks: <a href="http://www.geeksforgeeks.org/longest-common-subsequence/">http://www.geeksforgeeks.org/longest-common-subsequence/</a>   </p>
+<h3 id="longest-common-substring"><a name="user-content-longest-common-substring" href="#longest-common-substring" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Longest Common Substring</h3>
+<p><strong>Input:</strong>  two strings X[1&hellip;m], Y[1&hellip;n]<br />
+<strong>Output:</strong> the <strong>length</strong> of the longest common substring (contiguous letters in same order)<br />
+<strong>Idea:</strong>  the longest common substring that <strong>ENDS</strong> at X[i], Y[j] has 2 possibilities:<br />
+  1. if X[i] matches Y[j] then the longest common substring that <strong>ENDS</strong> at X[i], Y[j] is one more letter long than the substring at X[1&hellip;i-1], Y[1&hellip;j-1]<br />
+  2. otherwise the longest common substring that __ENDS_ at X[i], Y[j] is zero  </p>
+<p><strong>Subproblem:</strong>  L[i,j] = max length of longest substring that <strong>ENDS</strong> at X[i], Y[j]<br />
+<strong>Recurrence:</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>cell</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>L[i, j] =</code></td>
+<td><b>if</b> <code>X[i] == Y[j]</code>, <b>then</b> <code>L[i-1, j-1] + 1</code></td>
+</tr>
+<tr>
+<td></td>
+<td><b>else:</b> <code>0</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Base Case:</strong><br />
+  * <code>L[i, 0] = 0  // can't make a substring with zero letters</code> <br />
+  * <code>L[0, j] = 0  // can't make a substring with zero letters</code>  </p>
+<p><strong>Run-time:</strong>  T(m, n) = O(m * n)  </p>
+<h4 id="pseudocode-for-longest-common-substring"><a name="user-content-pseudocode-for-longest-common-substring" href="#pseudocode-for-longest-common-substring" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Longest Common Substring</h4>
+<p><pre><code><br />
+<b>Longest-Common-Substring(X[1&hellip;m], Y[1&hellip;n])</b><br />
+01 create table L[0&hellip;m, 0&hellip;n]<br />
+02 for i=0 to m<br />
+03  L[i,0] = 0<br />
+04 for j=0 to n<br />
+05  L[0,j] = 0<br />
+06 maxLength = 0<br />
+07 for i=1 to m<br />
+08  for j=1 to n<br />
+09      if X[i] == Y[j]<br />
+10          L[i,j] = L[i-1, j-1] + 1<br />
+11      else<br />
+12          L[i,j] = 0<br />
+13      maxLength = max{ maxLength, L[i,j] }<br />
+14 return maxLength<br />
+</code></pre>  </p>
+<h4 id="java-for-longest-common-substring"><a name="user-content-java-for-longest-common-substring" href="#java-for-longest-common-substring" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Longest Common Substring</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Longest Common Substring</strong><br />
+<em> Wikipedia: <a href="https://en.wikipedia.org/wiki/Longest_common_substring_problem"><a href="https://en.wikipedia.org/wiki/Longest_common_substring_problem">https://en.wikipedia.org/wiki/Longest_common_substring_problem</a></a><br />
+</em> GeeksforGeeks: <a href="http://www.geeksforgeeks.org/longest-common-substring/">http://www.geeksforgeeks.org/longest-common-substring/</a>  </p>
+<h3 id="rod-cutting"><a name="user-content-rod-cutting" href="#rod-cutting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Rod Cutting</h3>
+<p><strong>Input:</strong> rod of length n, price per length as array P[1&hellip;n]<br />
+<strong>Output:</strong> max revenue that can be generated from rod of length n<br />
+<strong>Idea:</strong><br />
+  * a rod of length j can be split at i = 0 to j-1 ways<br />
+  * assume we know the max value at each split for any possible additional splits<br />
+  * find the max value using P[i] + M[j-1]<br />
+  * note that i will cross j-1, so all possible permutations are considered  </p>
+<p><strong>Subproblem:</strong> A[j] = max possible revenue that can be generated from a rod of length j<br />
+<strong>Recurrence:</strong> <code>A[j] = max&lt;sub&gt;i=0 to j&lt;/sub&gt;{ P[i] + M[j-i] }</code><br />
+<strong>Base Case:</strong>  <code>A[0] = 0</code><br />
+<strong>Run-time:</strong>  T(n) = O(n<sup>2</sup>)  </p>
+<h4 id="pseudocode-for-rod-cutting"><a name="user-content-pseudocode-for-rod-cutting" href="#pseudocode-for-rod-cutting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Rod Cutting</h4>
+<p><pre><code><br />
+<b>Max-Revenue(n, P[1&hellip;n])</b><br />
+01 create new array M[0&hellip;n]<br />
+02 M[0] = 0<br />
+03 for j=1 to n<br />
+04  maxRevenue = -&#8734;<br />
+05  for i=0 to j<br />
+06      maxRevenue = max{ maxRevenue, P[i] + M[j-i] }<br />
+07  M[j] = maxRevenue<br />
+08 return M[n]<br />
+</code></pre>   </p>
+<h4 id="java-for-rod-cutting"><a name="user-content-java-for-rod-cutting" href="#java-for-rod-cutting" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Rod Cutting</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Rod Cutting</strong><br />
+* GeeksforGeeks: <a href="http://www.geeksforgeeks.org/dynamic-programming-set-13-cutting-a-rod/">http://www.geeksforgeeks.org/dynamic-programming-set-13-cutting-a-rod/</a>  </p>
+<h3 id="max-interval-sum"><a name="user-content-max-interval-sum" href="#max-interval-sum" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Max Interval Sum</h3>
+<p><strong>Input:</strong> array A[1&hellip;n] of real numbers<br />
+<strong>Output:</strong> a <strong>contiguous</strong> subsequence that has maximum sum of all possible contiguous intervals<br />
+<strong>Idea:</strong>  Assume we know the max possible interval sum that <strong>ENDS</strong> at A[i-1].  The max sum that <strong>ENDS</strong> at A[i] is the <strong>max value</strong> of 2 possibilities:<br />
+  1. adding A[i] to the max interval <strong>ENDING</strong> at A[i-1] or<br />
+  2. starting a new subsequence at A[i]  </p>
+<p><strong>Subproblem:</strong> M[i] = max interval value that <strong>ENDS</strong> at A[i]<br />
+<strong>Recurrence:</strong> <code>M[i] = max{ A[i], A[i] + M[i-1] }</code><br />
+<strong>Base Case:</strong>  <code>M[0] = 0</code><br />
+<strong>Run-time:</strong>  T(n) = O(n)  </p>
+<h4 id="pseudocode-for-max-inteval-sum"><a name="user-content-pseudocode-for-max-inteval-sum" href="#pseudocode-for-max-inteval-sum" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Max Inteval Sum</h4>
+<p><pre><code><br />
+<b>Max-Interval-Sum(A[1&hellip;n])</b><br />
+01 create new array M[0&hellip;n]<br />
+02 M[0] = 0<br />
+03 maxSum = -&#8734;<br />
+04 leftIndex = -1<br />
+05 rightIndex = -1<br />
+06 for i=1 to n<br />
+07  M[i] = max{ A[i], A[i] + M[i-1] }<br />
+08  if M[i] &gt; maxSum<br />
+09      maxSum = M[i]<br />
+10      rightIndex = i<br />
+11      if A[i] == maxSum<br />
+            leftIndex = i<br />
+12 return A[leftIndex&hellip;rightIndex], maxSum<br />
+</code></pre>   </p>
+<h4 id="java-for-max-interval-sum"><a name="user-content-java-for-max-interval-sum" href="#java-for-max-interval-sum" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Max Interval Sum</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Max Interval Sum</strong> <br />
+<em> Wikipedia: <a href="https://en.wikipedia.org/wiki/Maximum_subarray_problem"><a href="https://en.wikipedia.org/wiki/Maximum_subarray_problem">https://en.wikipedia.org/wiki/Maximum_subarray_problem</a></a><br />
+</em> GeeksforGeeks: <a href="http://www.geeksforgeeks.org/largest-sum-contiguous-subarray/">http://www.geeksforgeeks.org/largest-sum-contiguous-subarray/</a>  </p>
+<h3 id="subset-sum-exists"><a name="user-content-subset-sum-exists" href="#subset-sum-exists" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Subset Sum Exists</h3>
+<p><strong>Input:</strong> array A[1&hellip;n] and value V <br />
+<strong>Output:</strong> True/False if there is a subset of A that sums to value V<br />
+<strong>Idea:</strong>  Create boolean table B[0&hellip;n, 0&hellip;V] where i<sup>th</sup> value is evaluated similar to Knapsack problem<br />
+<strong>Subproblem:</strong>  B[i,j] contains True/False if A[1&hellip;i] contains a subset that forms j<br />
+<strong>Recurrence:</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>cell</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>B[i, j] =</code></td>
+<td><b>if</b> <code>A[i] &gt; j</code>, <b>then</b> <code>B[i-1, j]</code></td>
+</tr>
+<tr>
+<td></td>
+<td><b>else:</b> <code>1</code> if <code>B[i-1,j] == 1</code> or <code>B[i-1, j-A[i]] == 1</code></td>
+</tr>
+<tr>
+<td></td>
+<td>don&rsquo;t use i<sup>th</sup> or use i<sup>th</sup></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Base Case:</strong><br />
+  * <code>B[i, 0] = 1  // subset exists that makes zero</code><br />
+  * <code>B[0, j] = 1</code>  </p>
+<p><strong>Run-time:</strong>  T(n) = O(n * V)  </p>
+<h4 id="pseudocode-for-subset-sum-exists"><a name="user-content-pseudocode-for-subset-sum-exists" href="#pseudocode-for-subset-sum-exists" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Subset Sum Exists</h4>
+<p><pre><code><br />
+<b>Subset-Sum-Exists(A[1&hellip;n], V)</b><br />
+01 create table B[0&hellip;n, 0&hellip;V]<br />
+02 for i = 0 to n<br />
+03  B[i,0] = 1<br />
+04 for j=0 to V<br />
+05  B[0,j] = 1<br />
+06 for i=1 to n<br />
+07  for j=1 to V<br />
+08      if A[i] &gt; j<br />
+09          B[i,j] = B[i-1,j]<br />
+10      else if B[i-1,j] == 1 or B[i-1, j-A[i]] == 1<br />
+11          B[i,j] = 1<br />
+12      else<br />
+13          B[i,j] = 0<br />
+14 return B[n,V]<br />
+</code></pre>  </p>
+<pre><code>
+<b>Alternate Solution</b>
+01 Fill table like knapsack
+02 check if M[n,V] == V
+03 M[i,j] = max sum of A[1...i] &#8804; j
+</code></pre>
+
+<h4 id="java-for-subset-sum-exists"><a name="user-content-java-for-subset-sum-exists" href="#java-for-subset-sum-exists" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Subset Sum Exists</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Subset Sum Exists</strong><br />
+<em> Wikipedia: <a href="https://en.wikipedia.org/wiki/Subset_sum_problem"><a href="https://en.wikipedia.org/wiki/Subset_sum_problem">https://en.wikipedia.org/wiki/Subset_sum_problem</a></a><br />
+</em> GeeksforGeeks: <a href="http://www.geeksforgeeks.org/dynamic-programming-subset-sum-problem/">http://www.geeksforgeeks.org/dynamic-programming-subset-sum-problem/</a>  </p>
+<h3 id="assembly-line"><a name="user-content-assembly-line" href="#assembly-line" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Assembly Line</h3>
+<p><strong>Input:</strong> two assembly lines with unique entry cost, exit cost, station cost, and (possible) transfer cost<br />
+<strong>Output:</strong> lowest cost path through the assembly lines<br />
+<strong>Idea:</strong> there are 2 input sources for each station, find the lowest cost path to each station<br />
+<strong>Subproblem:</strong> f<sub>i</sub>[j] is the minimum cost to complete station s<sub>i,j</sub><br />
+<strong>Recurrence:</strong> <code>f&lt;sub&gt;i&lt;/sub&gt;[j] = a&lt;sub&gt;i&lt;/sub&gt;[j] + min{ f&lt;sub&gt;1&lt;/sub&gt;[j-1], f&lt;sub&gt;2&lt;/sub&gt;[j-1] }</code><br />
+<strong>Base Case:</strong> <code>&lt;sub&gt;i&lt;/sub&gt;[1] = a&lt;sub&gt;i&lt;/sub&gt;[1] + e&lt;sub&gt;1&lt;/sub&gt;</code> <br />
+<strong>Run-time:</strong>  T(n) = O(n)  </p>
+<h4 id="pseudocode-for-assembly-line"><a name="user-content-pseudocode-for-assembly-line" href="#pseudocode-for-assembly-line" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Assembly Line</h4>
+<p><pre><code><br />
+<b>Lowest-Cost-Path(e<sub>1</sub>, s<sub>1,1</sub>&hellip;s<sub>1,n</sub>, x<sub>1</sub>, e<sub>2</sub>, s<sub>2,1</sub>&hellip;s<sub>2,n</sub>, x<sub>2</sub>)</b><br />
+01 f<sub>1</sub>[1&hellip;n], f<sub>2</sub>[1&hellip;n], l<sub>1</sub>[1&hellip;n], l<sub>2</sub>[1&hellip;n] are new arrays<br />
+02 f<sub>1</sub>[1] = a<sub>1</sub>[1] + e<sub>1</sub><br />
+03 f<sub>2</sub>[1] = a<sub>2</sub>[1] + e<sub>2</sub><br />
+04 l<sub>1</sub>[1] = 1 // tracks source as line 1 or line 2 (i.e. parent)<br />
+05 l<sub>2</sub>[1] = 2 // tracks source as line 1 or line 2 (i.e. parent)<br />
+06 for j=2 to n<br />
+07  if f<sub>1</sub>[j-1] &lt; f<sub>2</sub>[j-1]<br />
+08      f<sub>1</sub>[j] = f<sub>1</sub>[j-1] + a<sub>1</sub>[j]<br />
+09      f<sub>2</sub>[j] = f<sub>1</sub>[j-1] + a<sub>2</sub>[j]<br />
+10      l<sub>1</sub>[j] = 1<br />
+11      l<sub>2</sub>[j] = 1<br />
+12  else<br />
+13      f<sub>1</sub>[j] = f<sub>2</sub>[j-1] + a<sub>1</sub>[j]<br />
+14      f<sub>2</sub>[j] = f<sub>2</sub>[j-1] + a<sub>2</sub>[j]<br />
+15      l<sub>1</sub>[j] = 2<br />
+16      l<sub>2</sub>[j] = 2<br />
+17 if (f<sub>1</sub>[n] + x<sub>1</sub>) &lt; (f<sub>2</sub>[n] + x<sub>2</sub>)<br />
+18  f<sup><em></sup> = f<sub>1</sub>[n] + x<sub>1</sub><br />
+19  l<sup></em></sup> = 1<br />
+20 else<br />
+21  f<sup><em></sup> = f<sub>2</sub>[n] + x<sub>2</sub><br />
+22  l<sup></em></sup> = 2<br />
+23 return f<sup><em></sup>  \ l<sup></em></sup> tracks path<br />
+</code></pre>  </p>
+<h4 id="java-for-assembly-line"><a name="user-content-java-for-assembly-line" href="#java-for-assembly-line" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Assembly Line</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Assembly Line</strong><br />
+* GeeksforGeeks: <a href="http://www.geeksforgeeks.org/dynamic-programming-set-34-assembly-line-scheduling/">http://www.geeksforgeeks.org/dynamic-programming-set-34-assembly-line-scheduling/</a>  </p>
+<h3 id="can-make-change"><a name="user-content-can-make-change" href="#can-make-change" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Can Make Change</h3>
+<p><strong>Input:</strong> unlimited supply of coin denominations d<sub>1</sub>,&hellip;,d<sub>n</sub> and amount A<br />
+<strong>Output:</strong> True/False if possible to make change for amount A from coins of denomination d<sub>1</sub>,&hellip;,d<sub>n</sub><br />
+<strong>Idea:</strong>  There are 3 considerations for using d<sub>i</sub>:<br />
+  1. d<sub>i</sub> exactly forms A<br />
+  2. we can form A using coins d<sub>1</sub>,&hellip;,d<sub>i-1</sub><br />
+  3. we can form A using a combination of d<sub>i</sub> + remainder of <sup>A</sup>&frasl;<sub>d<sub>i</sub></sub> i.e. A mod d<sub>i</sub>  </p>
+<p><strong>Subproblem:</strong>  B[i,j] contains True/False if we can form amount j using coin denominations d<sub>1</sub>,&hellip;,d<sub>i</sub><br />
+<strong>Recurrence:</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>cell</th>
+<th>value</th>
+<th>condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>B[i, j] =</code></td>
+<td><b>1 if</b>:</td>
+<td><code>A mod d[i] == 0</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>B[i-1, j] == 1</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>B[i, j mod d[i]] == 1</code></td>
+</tr>
+<tr>
+<td></td>
+<td><b>0 otherwise</b></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Base Case:</strong><br />
+  * <code>B[i, 0] = 0  // can't make change with 0 coins</code><br />
+  * <code>B[0, j] = 0</code></p>
+<p><strong>Run-time:</strong>  T(n) = O(n * A)  </p>
+<h4 id="pseudocode-for-can-make-change"><a name="user-content-pseudocode-for-can-make-change" href="#pseudocode-for-can-make-change" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Can Make Change</h4>
+<p><pre><code><br />
+<b>Can-Make-Change(d[1&hellip;n], A)</b><br />
+01 create table B[0&hellip;n, 0&hellip;A]<br />
+02 for i = 0 to n<br />
+03  B[i,0] = 0<br />
+04 for j=0 to V<br />
+05  B[0,j] = 0<br />
+06 for i=1 to n<br />
+07  for j=1 to A<br />
+08      if (A mod d[i] == 0) or (B[i-1, j] == 1) or (B[i, j mod d[i]] == 1)<br />
+09          B[i,j] = 1<br />
+10      else<br />
+11          B[i,j] = 0<br />
+12 return B[n,A]<br />
+</code></pre>  </p>
+<h4 id="java-for-can-make-change"><a name="user-content-java-for-can-make-change" href="#java-for-can-make-change" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Can Make Change</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Can Make Change</strong><br />
+<em> Wikipedia: <a href="https://en.wikipedia.org/wiki/Change-making_problem"><a href="https://en.wikipedia.org/wiki/Change-making_problem">https://en.wikipedia.org/wiki/Change-making_problem</a></a><br />
+</em> GeeksforGeeks: <a href="http://www.geeksforgeeks.org/dynamic-programming-set-7-coin-change/">http://www.geeksforgeeks.org/dynamic-programming-set-7-coin-change/</a>  </p>
+<h3 id="minimum-coins-needed"><a name="user-content-minimum-coins-needed" href="#minimum-coins-needed" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Minimum Coins Needed</h3>
+<p><strong>Input:</strong>  unlimited coins in denomiations d<sub>1</sub>,&hellip;,d<sub>n</sub> and amount A<br />
+<strong>Output:</strong> minimum number of coins needed for form A<br />
+<strong>Idea:</strong>  Same as <a href="#knapsack-problem">Knapsack Problem</a>.  The <strong>i<sup>th</sup> coin can be added or not</strong>.  Compare the nunmber of coins if we use another d<sub>i</sub> coin or just use minimum without d<sub>i</sub> denomination.<br />
+<strong>Subproblem:</strong>  M[i,j] = min number of coins needed to form amount j using coins d[1&hellip;i]<br />
+<strong>Recurrence:</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>cell</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M[i, j] =</code></td>
+<td><b>if</b> <code>j &amp;#8805; d[i]</code>, <b>then</b> <code>min { M[i-1, j], M[i, j-d[i]] + 1 }</code></td>
+</tr>
+<tr>
+<td></td>
+<td><b>else:</b> <code>M[i-1, j]</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Base Case:</strong><br />
+  * <code>M[i, 0] = 0</code><br />
+  * <code>M[0, j] = 0</code>  </p>
+<p><strong>Run-time:</strong>  T(n, A) = O(n * A)  </p>
+<h4 id="pseudocode-for-minimum-coins-needed"><a name="user-content-pseudocode-for-minimum-coins-needed" href="#pseudocode-for-minimum-coins-needed" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Minimum Coins Needed</h4>
+<p><pre><code><br />
+<b>Minimum-Coins-Needed(d[1&hellip;n], A)</b><br />
+01 create table M[0&hellip;n, 0&hellip;A]<br />
+02 for i=0 to n<br />
+03  M[i,0] = 0<br />
+04 for j=0 to A<br />
+05  M[0,j] = 0<br />
+06 for i=1 to n<br />
+07  for j=1 to A<br />
+08      if j &#8805; d[i]<br />
+09          M[i,j] = min { M[i-1, j], M[i, j-d[i]] + 1 }<br />
+10      else<br />
+11          M[i,j] = M[i-1, j]<br />
+12 return M[n,A]<br />
+</code></pre>  </p>
+<h4 id="java-for-minimum-coins-needed"><a name="user-content-java-for-minimum-coins-needed" href="#java-for-minimum-coins-needed" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Minimum Coins Needed</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Minimum Coins Needed</strong><br />
+<em> Wikipedia: <a href="https://en.wikipedia.org/wiki/Change-making_problem"><a href="https://en.wikipedia.org/wiki/Change-making_problem">https://en.wikipedia.org/wiki/Change-making_problem</a></a><br />
+</em> GeeksforGeeks: <a href="http://www.geeksforgeeks.org/find-minimum-number-of-coins-that-make-a-change/">http://www.geeksforgeeks.org/find-minimum-number-of-coins-that-make-a-change/</a>  </p>
+<h3 id="can-partition-array-into-equal-sums"><a name="user-content-can-partition-array-into-equal-sums" href="#can-partition-array-into-equal-sums" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Can Partition Array Into Equal Sums</h3>
+<p><strong>Input:</strong>  an array A[1&hellip;n] of numbers<br />
+<strong>Output:</strong> True/False if array <strong>can be divided into two sets of equal value</strong><br />
+<strong>Idea:</strong>  Similar to <a href="#knapsack-problem">Knapsack Problem</a>.  Find sum of A[1&hellip;n] and create DP table M[0&hellip;n, 0&hellip;<sup>sum</sup>&frasl;<sub>2</sub>] that finds the max possible sum of A[1&hellip;i] that is &#8804; j. If M[n, <sup>sum</sup>&frasl;<sub>2</sub>] == <sup>sum</sup>&frasl;<sub>2</sub>, then return true.<br />
+<strong>Subproblem:</strong>  M[i,j] = the max possible sum using A[1&hellip;i] that is &#8804; j<br />
+<strong>Recurrence:</strong>  </p>
+<table>
+<thead>
+<tr>
+<th>cell</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M[i, j] =</code></td>
+<td><b>if</b> i &#8804; j<code>, &lt;b&gt;then&lt;/b&gt;</code>max{ M[i-1, j], M[i-1, j-A[i]] + A[i] }`</td>
+</tr>
+</tbody>
+</table>
+<p>|  | <b>else&lt;/</p>
+<p><strong>Base Case:</strong><br />
+  * <code>M[i, 0] = 0</code><br />
+  * <code>M[0, j] = 0</code>  </p>
+<p><strong>Run-time:</strong>  T(n, <sup>sum</sup>&frasl;<sub>2</sub>) = O(n * <sup>sum</sup>&frasl;<sub>2</sub>)  </p>
+<h4 id="pseudocode-for-can-partition-array-into-equal-sums"><a name="user-content-pseudocode-for-can-partition-array-into-equal-sums" href="#pseudocode-for-can-partition-array-into-equal-sums" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Pseudocode for Can Partition Array Into Equal Sums</h4>
+<p><pre><code><br />
+<b>Can-Partition-Array-Into-Equal-Sums(d[1&hellip;n], A)</b><br />
+01 sum = 0<br />
+02 for i=1 to n<br />
+03  sum = sum + A[1]<br />
+04 create table M[0&hellip;n, 0&hellip;<sup>sum</sup>&frasl;<sub>2</sub>]<br />
+02 for i=0 to n<br />
+03  M[i,0] = 0<br />
+04 for j=0 to <sup>sum</sup>&frasl;<sub>2</sub><br />
+05  M[0,j] = 0<br />
+06 for i=1 to n<br />
+07  for j=1 to <sup>sum</sup>&frasl;<sub>2</sub><br />
+08      if i &#8804; j<br />
+09          M[i,j] = max{ M[i-1, j], M[i-1, j-A[i]] + A[i] }<br />
+10      else<br />
+11          M[i,j] = M[i-1, j]<br />
+12 return M[n,<sup>sum</sup>&frasl;<sub>2</sub>]<br />
+</code></pre>  </p>
+<h4 id="java-for-can-partition-array-into-equal-sums"><a name="user-content-java-for-can-partition-array-into-equal-sums" href="#java-for-can-partition-array-into-equal-sums" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Java for Can Partition Array Into Equal Sums</h4>
+<p><pre><code>[code here]
+
+</code></pre><br />
+<strong>Additional Resources for Can Partition Array Into Equal Sums</strong><br />
+<em> Wikipedia: <a href="https://en.wikipedia.org/wiki/Change-making_problem"><a href="https://en.wikipedia.org/wiki/Change-making_problem">https://en.wikipedia.org/wiki/Change-making_problem</a></a><br />
+</em> GeeksforGeeks: <a href="http://www.geeksforgeeks.org/find-minimum-number-of-coins-that-make-a-change/">http://www.geeksforgeeks.org/find-minimum-number-of-coins-that-make-a-change/</a> </p></article></body></html>

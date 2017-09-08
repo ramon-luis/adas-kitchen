@@ -14,6 +14,17 @@
 &nbsp;&nbsp;[Array Contains Integers That Sum to X](#array-contains-integers-that-sum-to-x)  
 &nbsp;&nbsp;[k Largest Less Than Median](#k-largest-less-than-median)  
 [Dynamic Programming Algorithms](#dynamic-programming-algorithms)  
+&nbsp;&nbsp;[General Tips for Dynamic Programming](#general-tips-for-dynamic-programming)  
+&nbsp;&nbsp;[Knapsack Problem](#knapsack-problem)  
+&nbsp;&nbsp;[Longest Common Subsequence](#longest-common-subsequence)  
+&nbsp;&nbsp;[Longest Common Substring](#longest-common-substring)  
+&nbsp;&nbsp;[Rod Cutting](#rod-cutting)  
+&nbsp;&nbsp;[Max Interval Sum](#max-interval-sum)  
+&nbsp;&nbsp;[Subset Sum Exists](#subset-sum-exists)  
+&nbsp;&nbsp;[Assembly Line](#assembly-line)  
+&nbsp;&nbsp;[Can Make Change](#can-make-change)  
+&nbsp;&nbsp;[Minimum Coins Needed](#minimum-coins-needed)  
+&nbsp;&nbsp;[Can Partition Array Into Equal Sums](#can-partition-array-into-equal-sums)  
 [Graph Algorithms](#graph-algorithms)  
 
 ## Runtime
@@ -66,7 +77,7 @@ __Run-time:__ O(n<sup>2</sup>)
 01 for j=2 to n
 02	key = A[j]
 03	i = j-1
-04	while i > 0 and A[i] > key
+04	while i>0 and A[i]>key
 05		A[i+1] = A[i]
 06		i = i-1
 07	A[i+1] = key
@@ -125,7 +136,7 @@ Either:
 __Output:__ single sorted array (input arrays combined)  
 __Structure:__  
   1. creates copies of input arrays with sentinels added to each input array  
-  2. loops `for k = p to r` and updates `A[k]` to min value of L &amp; R  
+  2. loops `for k=p to r` and updates `A[k]` to min value of L &amp; R  
 
 __Maintains:__  
   * <code>n<sub>1</sub> = q - p + 1</code>  to track section of input array  
@@ -142,14 +153,14 @@ __Run-time:__ O(n) // 3 `for` loops: n<sub>1</sub>, n<sub>2</sub>, `p to r = n`
 01 n<sub>1</sub> = q - p + 1  // p to q <em>inclusive</em> of q
 02 n<sub>2</sub> = r - q  // q to r <em>exclusive</em> of q
 03 L[1...n<sub>1</sub>+1], L[1...n<sub>2</sub>+1] are new arrays  // need extra memory allocation for sentinels
-04 for i = 1 to n<sub>1</sub>  // fill L
+04 for i=1 to n<sub>1</sub>  // fill L
 05 	L[i] = A[p+i-1]
-06 for j = 1 to n<sub>2</sub>  // fill R
+06 for j=1 to n<sub>2</sub>  // fill R
 07 	R[j] = A[q+j]
 08 L[n<sub>1</sub>+1] = &#8734;  // add sentinel
 09 R[n<sub>2</sub>+1] = &#8734;  // add sentinel
 10 i=1, j=1 // reset i &amp; j
-11 for k = p to r  // loop and assign min value
+11 for k=p to r  // loop and assign min value
 12 	if L[i] &#8804; R[j]
 13 		A[k] = L[i]
 14 		i = i+1
@@ -162,14 +173,14 @@ __Run-time:__ O(n) // 3 `for` loops: n<sub>1</sub>, n<sub>2</sub>, `p to r = n`
 <b>Input: Two sorted arrays</b>
 <b>Merge(A<sub>1</sub>[1...m], A<sub>2</sub>[1...n])</b> where A<sub>1</sub> and A<sub>2</sub> are <b>sorted</b> arrays
 01 L[1...m+1], R[1...n+1], A[1...m+n] are new arrays  // need extra memory allocation for sentinels
-02 for i = 1 to m  // fill L
+02 for i=1 to m  // fill L
 03 	L[i] = A<sub>1</sub>[i]
-04 for j = 1 to n  // fill R
+04 for j=1 to n  // fill R
 05 	R[j] = A<sub>2</sub>[j]
 06 L[m+1] = &#8734;  // add sentinel
 07 R[n+1] = &#8734;  // add sentinel
 08 i=1, j=1 // reset i &amp; j
-09 for k = 1 to (m+n)
+09 for k=1 to (m+n)
 10 	if L[i] &#8804; R[j]
 11 		A[k] = L[i]
 12 		i = i+1
@@ -264,7 +275,7 @@ What does Partition return if all elements are equal in value? __i+1 = r__
 <b>Partition(A, p, r)</b> where A is <b>unsorted</b> array
 01 x = A[r]  // set pivot
 02 i = p-1  // set left marker i outside of p
-03 for j = p to r-1  // loop from p to pivot
+03 for j=p to r-1  // loop from p to pivot
 04 	if A[j] &#8804; A[i]
 05 		i = i+1
 06 		exchange A[i], A[j]
@@ -398,14 +409,14 @@ __Run-time:__ O(n lg n) same as Merge Sort
 01 n<sub>1</sub> = q - p + 1  // p to q <em>inclusive</em> of q
 02 n<sub>2</sub> = r - q  // q to r <em>exclusive</em> of q
 03 L[1...n<sub>1</sub>+1], L[1...n<sub>2</sub>+1] are new arrays  // need extra memory allocation for sentinels
-04 for i = 1 to n<sub>1</sub>  // fill L
+04 for i=1 to n<sub>1</sub>  // fill L
 05 	L[i] = A[p+i-1]
-06 for j = 1 to n<sub>2</sub>  // fill R
+06 for j=1 to n<sub>2</sub>  // fill R
 07 	R[j] = A[q+j]
 08 L[n<sub>1</sub>+1] = &#8734;  // add sentinel
 09 R[n<sub>2</sub>+1] = &#8734;  // add sentinel
 10 i=1, j=1 // reset i &amp; j
-11 for k = p to r  // loop and count inversions before sorting
+11 for k=p to r  // loop and count inversions before sorting
 12 	if L[i] &gt; R[j] and L[i] != &#8734;  // <b>inversion found</b>
 13 		inversionCount = inversionCount + (q-p+1) - (i-1)  // <b>update inversion count</b>
 12 	if L[i] &#8804; R[j]  // continue with standard sorting
@@ -434,8 +445,8 @@ __Run-time:__ O(n<sup>2</sup> lg n)  // Binary-Search (lg n) called on double lo
 <b>Triple-Count(A[1...n])</b> where A is <b>unsorted</b> array
 01 Merge-Sort(A)  // need to sort before we can use Binary-Search
 02 tripleCount = 0
-03 for i = 1 to n-1  // loop through all pairs from left to right
-04 	for j = 2 to n
+03 for i=1 to n-1  // loop through all pairs from left to right
+04 	for j=2 to n
 05 		x = A[i]
 06 		y = A[j]
 07 		z = -(x+y)  // x + y + z = 0, therefore z = -(x+y)
@@ -468,11 +479,11 @@ __Run-time:__
 01 medianIndex = &#8970;<sup>n</sup>&frasl;<sub>2</sub>&#8971;
 02 medianValue = Select(A, medianIndex)
 03 D is new array
-04 for i = 1 to n
+04 for i=1 to n
 05 	D[i] = |A[i] - medianValue|  // distance from median value
 06 copy D to K
 07 kValue = Select(K, kValue)
-08 for i = 1 to n
+08 for i=1 to n
 09 	if D[i] &#8804; kValue
 10 		print A[i]
 </code></pre>  
@@ -498,7 +509,7 @@ __Run-time:__  O(n lg n)  // Binary-Search (lg n) called on all elements (n)
 <pre><code>
 <b>Has-Integer-Sum(A[1...n], x)</b> where A is <b>unsorted</b> array
 01 Merge-Sort(A)  // <b>important: sort first so we can use BinarySearch</b>
-02 for i = 1 to n
+02 for i=1 to n
 03 	y = x - A[i]
 04 	if Binary-Search(A, y) != 1  // found a match, T(n) = O(lg n)
 05 		return true
@@ -543,6 +554,10 @@ __Run-time:__  O(n)
 [Rod Cutting](#rod-cutting)  
 [Max Interval Sum](#max-interval-sum)  
 [Subset Sum Exists](#subset-sum-exists)  
+[Assembly Line](#assembly-line)  
+[Can Make Change](#can-make-change)  
+[Minimum Coins Needed](#minimum-coins-needed)  
+[Can Partition Array Into Equal Sums](#can-partition-array-into-equal-sums)  
 
 ### General Tips for Dynamic Programming
 * try to identify sequence of steps -> __focus on last/incremental step__
@@ -572,12 +587,12 @@ __Recurrence:__
 
 | cell | value |  
 | --- | --- |  
-| M[i, j] = | <b>if</b> w<sub>i</sub> &#8804; j, <b>then</b> max { v<sub>i</sub> + M[i-1, j-w[i]], M[i-1, j] } |  
-|  | <b>else:</b> M[i-1, j] |  
+| `M[i, j] = `| <b>if</b> `w<sub>i</sub> &#8804; j`, <b>then</b> `max { v<sub>i</sub> + M[i-1, j-w[i]], M[i-1, j] }` |  
+|  | <b>else:</b> `M[i-1, j]` |  
 
 __Base Case:__  
-  * M[i, 0] = 0  // no items at weight limit 0  
-  * M[0, j] = 0  // no items if 0 items allowed  
+  * `M[i, 0] = 0  // no items at weight limit 0`  
+  * `M[0, j] = 0  // no items if 0 items allowed`  
 
 __Run-time:__  T(n, W) = O(n * W)  
 
@@ -585,12 +600,12 @@ __Run-time:__  T(n, W) = O(n * W)
 <pre><code>
 <b>Max-Value-In-Knapsack(w<sub>1</sub>,...,w<sub>n</sub>,v<sub>1</sub>,...,v<sub>n</sub>, W)</b>
 01 create table M[0...n, 0...W]
-02 for i = 0 to n
+02 for i=0 to n
 03 	M[i,0] = 0
-04 for j = 0 to W
+04 for j=0 to W
 05 	M[0,j] = 0
-06 for i = 1 to n
-07 	for j = 1 to W
+06 for i=1 to n
+07 	for j=1 to W
 08 		if w[i] &#8804; j
 09 			M[i,j] = max{ v[i] + M[i-1, j-w[i]], M[i-1, j] }
 10 		else
@@ -619,12 +634,12 @@ __Recurrence:__
 
 | cell | value |  
 | --- | --- |  
-| M[i, j] = | <b>if</b> X[i] == Y[j], <b>then</b> M[i-1, j-1] + 1    
-|  | <b>else:</b> max{ M[i-1, j], M[i, j-1]}    
+| `M[i, j] = `| <b>if</b> `X[i] == Y[j]`, <b>then</b> `M[i-1, j-1] + 1`    
+|  | <b>else:</b> `max{ M[i-1, j], M[i, j-1] }`    
 
 __Base Case:__  
-  * M[i, 0] = 0  // can't make a subsequence with zero letters    
-  * M[0, j] = 0  // can't make a subsequence with zero letters   
+  * `M[i, 0] = 0  // can't make a subsequence with zero letters`    
+  * `M[0, j] = 0  // can't make a subsequence with zero letters`   
 
 __Run-time:__  T(m, n) = O(m * n)  
 
@@ -632,12 +647,12 @@ __Run-time:__  T(m, n) = O(m * n)
 <pre><code>
 <b>Longest-Common-Subsequence(X[1...m], Y[1...n])</b>
 01 create table M[0...m, 0...n]
-02 for i = 0 to m
+02 for i=0 to m
 03 	M[i,0] = 0
-04 for j = 0 to n
+04 for j=0 to n
 05 	M[0,j] = 0
-06 for i = 1 to m
-07 	for j = 1 to n
+06 for i=1 to m
+07 	for j=1 to n
 08 		if X[i] == Y[j]
 09 			M[i,j] = M[i-1, j-1] + 1
 10 		else
@@ -666,12 +681,12 @@ __Recurrence:__
 
 | cell | value |  
 | --- | --- |  
-| L[i, j] = | <b>if</b> X[i] == Y[j], <b>then</b> L[i-1, j-1] + 1  
-|  | <b>else:</b> 0  
+| `L[i, j] = `| <b>if</b> `X[i] == Y[j]`, <b>then</b> `L[i-1, j-1] + 1`  
+|  | <b>else:</b> `0`  
 
 __Base Case:__  
-  * L[i, 0] = 0  // can't make a substring with zero letters   
-  * L[0, j] = 0  // can't make a substring with zero letters  
+  * `L[i, 0] = 0  // can't make a substring with zero letters`   
+  * `L[0, j] = 0  // can't make a substring with zero letters`  
 
 __Run-time:__  T(m, n) = O(m * n)  
 
@@ -679,13 +694,13 @@ __Run-time:__  T(m, n) = O(m * n)
 <pre><code>
 <b>Longest-Common-Substring(X[1...m], Y[1...n])</b>
 01 create table L[0...m, 0...n]
-02 for i = 0 to m
+02 for i=0 to m
 03 	L[i,0] = 0
-04 for j = 0 to n
+04 for j=0 to n
 05 	L[0,j] = 0
 06 maxLength = 0
-07 for i = 1 to m
-08 	for j = 1 to n
+07 for i=1 to m
+08 	for j=1 to n
 09 		if X[i] == Y[j]
 10 			L[i,j] = L[i-1, j-1] + 1
 11 		else
@@ -713,8 +728,8 @@ __Idea:__
   * note that i will cross j-1, so all possible permutations are considered  
 
 __Subproblem:__ A[j] = max possible revenue that can be generated from a rod of length j  
-__Recurrence:__ A[j] = max<sub>i=0 to j</sub>{ P[i] + M[j-i] }  
-__Base Case:__  A[0] = 0  
+__Recurrence:__ `A[j] = max<sub>i=0 to j</sub>{ P[i] + M[j-i] }`  
+__Base Case:__  `A[0] = 0`  
 __Run-time:__  T(n) = O(n<sup>2</sup>)  
 
 #### Pseudocode for Rod Cutting
@@ -722,9 +737,9 @@ __Run-time:__  T(n) = O(n<sup>2</sup>)
 <b>Max-Revenue(n, P[1...n])</b>
 01 create new array M[0...n]
 02 M[0] = 0
-03 for j = 1 to n
+03 for j=1 to n
 04 	maxRevenue = -&#8734;
-05 	for i = 0 to j
+05 	for i=0 to j
 06 		maxRevenue = max{ maxRevenue, P[i] + M[j-i] }
 07 	M[j] = maxRevenue
 08 return M[n]
@@ -746,8 +761,8 @@ __Idea:__  Assume we know the max possible interval sum that __ENDS__ at A[i-1].
   2. starting a new subsequence at A[i]  
 
 __Subproblem:__ M[i] = max interval value that __ENDS__ at A[i]  
-__Recurrence:__ M[i] = max{ A[i], A[i] + M[i-1] }  
-__Base Case:__  M[0] = 0  
+__Recurrence:__ `M[i] = max{ A[i], A[i] + M[i-1] }`  
+__Base Case:__  `M[0] = 0`  
 __Run-time:__  T(n) = O(n)  
 
 #### Pseudocode for Max Inteval Sum  
@@ -758,7 +773,7 @@ __Run-time:__  T(n) = O(n)
 03 maxSum = -&#8734;
 04 leftIndex = -1
 05 rightIndex = -1
-06 for i = 1 to n
+06 for i=1 to n
 07 	M[i] = max{ A[i], A[i] + M[i-1] }
 08 	if M[i] > maxSum
 09 		maxSum = M[i]
@@ -786,24 +801,26 @@ __Recurrence:__
 
 | cell | value |  
 | --- | --- |  
-| B[i, j] = | <b>if</b> A[i] > j, <b>then</b> B[i-1, j] |  
-|  | <b>else:</b> 1 if B[i-1,j] == 1 or  B[i-1, j-A[i]] == 1 |  
+| `B[i, j] = `| <b>if</b> `A[i] > j`, <b>then</b> `B[i-1, j]` |  
+|  | <b>else:</b> `1` if `B[i-1,j] == 1` or `B[i-1, j-A[i]] == 1` |  
 |  | don't use i<sup>th</sup> or use i<sup>th</sup> |    
 
 __Base Case:__  
-  * B[i, 0] = 1  // subset exists that makes zero
-  * B[0, j] = 1
+  * `B[i, 0] = 1  // subset exists that makes zero`
+  * `B[0, j] = 1`  
+
+__Run-time:__  T(n) = O(n * V)  
 
 #### Pseudocode for Subset Sum Exists  
 <pre><code>
-<b>Subset Sum Exists(A[1...n], V)</b>
+<b>Subset-Sum-Exists(A[1...n], V)</b>
 01 create table B[0...n, 0...V]
 02 for i = 0 to n
 03 	B[i,0] = 1
-04 for j = 0 to V
+04 for j=0 to V
 05 	B[0,j] = 1
-06 for i = 1 to n
-07 	for j = 1 to V
+06 for i=1 to n
+07 	for j=1 to V
 08 		if A[i] > j
 09 			B[i,j] = B[i-1,j]
 10 		else if B[i-1,j] == 1 or B[i-1, j-A[i]] == 1
@@ -813,11 +830,12 @@ __Base Case:__
 14 return B[n,V]
 </code></pre>  
 
-``` Alternate Solution
-1. Fill table like knapsack
-2. check if M[n,V] == V
-  * M[i,j] = max sume of A[1...i] &#8804; j
-```  
+<pre><code>
+<b>Alternate Solution</b>
+01 Fill table like knapsack
+02 check if M[n,V] == V
+03 M[i,j] = max sum of A[1...i] &#8804; j
+</code></pre> 
 
 #### Java for Subset Sum Exists  
 ```
@@ -828,5 +846,188 @@ __Additional Resources for Subset Sum Exists__
 * Wikipedia: https://en.wikipedia.org/wiki/Subset_sum_problem  
 * GeeksforGeeks: http://www.geeksforgeeks.org/dynamic-programming-subset-sum-problem/  
 
+### Assembly Line  
+__Input:__ two assembly lines with unique entry cost, exit cost, station cost, and (possible) transfer cost  
+__Output:__ lowest cost path through the assembly lines  
+__Idea:__ there are 2 input sources for each station, find the lowest cost path to each station  
+__Subproblem:__ f<sub>i</sub>[j] is the minimum cost to complete station s<sub>i,j</sub>  
+__Recurrence:__ `f<sub>i</sub>[j] = a<sub>i</sub>[j] + min{ f<sub>1</sub>[j-1], f<sub>2</sub>[j-1] }`  
+__Base Case:__ `<sub>i</sub>[1] = a<sub>i</sub>[1] + e<sub>1</sub>`   
+__Run-time:__  T(n) = O(n)  
 
+#### Pseudocode for Assembly Line  
+<pre><code>
+<b>Lowest-Cost-Path(e<sub>1</sub>, s<sub>1,1</sub>...s<sub>1,n</sub>, x<sub>1</sub>, e<sub>2</sub>, s<sub>2,1</sub>...s<sub>2,n</sub>, x<sub>2</sub>)</b>
+01 f<sub>1</sub>[1...n], f<sub>2</sub>[1...n], l<sub>1</sub>[1...n], l<sub>2</sub>[1...n] are new arrays
+02 f<sub>1</sub>[1] = a<sub>1</sub>[1] + e<sub>1</sub>
+03 f<sub>2</sub>[1] = a<sub>2</sub>[1] + e<sub>2</sub>
+04 l<sub>1</sub>[1] = 1 // tracks source as line 1 or line 2 (i.e. parent)
+05 l<sub>2</sub>[1] = 2 // tracks source as line 1 or line 2 (i.e. parent)
+06 for j=2 to n
+07 	if f<sub>1</sub>[j-1] &lt; f<sub>2</sub>[j-1]
+08 		f<sub>1</sub>[j] = f<sub>1</sub>[j-1] + a<sub>1</sub>[j]
+09 		f<sub>2</sub>[j] = f<sub>1</sub>[j-1] + a<sub>2</sub>[j]
+10 		l<sub>1</sub>[j] = 1
+11 		l<sub>2</sub>[j] = 1
+12 	else
+13 		f<sub>1</sub>[j] = f<sub>2</sub>[j-1] + a<sub>1</sub>[j]
+14 		f<sub>2</sub>[j] = f<sub>2</sub>[j-1] + a<sub>2</sub>[j]
+15 		l<sub>1</sub>[j] = 2
+16 		l<sub>2</sub>[j] = 2
+17 if (f<sub>1</sub>[n] + x<sub>1</sub>) &lt; (f<sub>2</sub>[n] + x<sub>2</sub>)
+18 	f<sup>*</sup> = f<sub>1</sub>[n] + x<sub>1</sub>
+19 	l<sup>*</sup> = 1
+20 else
+21 	f<sup>*</sup> = f<sub>2</sub>[n] + x<sub>2</sub>
+22 	l<sup>*</sup> = 2
+23 return f<sup>*</sup>  \\ l<sup>*</sup> tracks path
+</code></pre>  
 
+#### Java for Assembly Line  
+```
+[code here]
+
+```
+__Additional Resources for Assembly Line__  
+* GeeksforGeeks: http://www.geeksforgeeks.org/dynamic-programming-set-34-assembly-line-scheduling/  
+
+### Can Make Change 
+__Input:__ unlimited supply of coin denominations d<sub>1</sub>,...,d<sub>n</sub> and amount A
+__Output:__ True/False if possible to make change for amount A from coins of denomination d<sub>1</sub>,...,d<sub>n</sub>
+__Idea:__  There are 3 considerations for using d<sub>i</sub>:
+  1. d<sub>i</sub> exactly forms A  
+  2. we can form A using coins d<sub>1</sub>,...,d<sub>i-1</sub>  
+  3. we can form A using a combination of d<sub>i</sub> + remainder of <sup>A</sup>&frasl;<sub>d<sub>i</sub></sub> i.e. A mod d<sub>i</sub>  
+
+__Subproblem:__  B[i,j] contains True/False if we can form amount j using coin denominations d<sub>1</sub>,...,d<sub>i</sub>  
+__Recurrence:__  
+
+| cell | value | condition |  
+| --- | --- | --- |  
+| `B[i, j] = `| <b>1 if</b>: | `A mod d[i] == 0` |  
+|  |  | `B[i-1, j] == 1` |  
+|  |  | `B[i, j mod d[i]] == 1` |
+|  | <b>0 otherwise</b> |  |  
+
+__Base Case:__  
+  * `B[i, 0] = 0  // can't make change with 0 coins`
+  * `B[0, j] = 0`
+
+__Run-time:__  T(n) = O(n * A)  
+
+#### Pseudocode for Can Make Change  
+<pre><code>
+<b>Can-Make-Change(d[1...n], A)</b>
+01 create table B[0...n, 0...A]
+02 for i = 0 to n
+03 	B[i,0] = 0
+04 for j=0 to V
+05 	B[0,j] = 0
+06 for i=1 to n
+07 	for j=1 to A
+08 		if (A mod d[i] == 0) or (B[i-1, j] == 1) or (B[i, j mod d[i]] == 1)
+09 			B[i,j] = 1
+10 		else
+11 			B[i,j] = 0
+12 return B[n,A]
+</code></pre>  
+
+#### Java for Can Make Change  
+```
+[code here]
+
+```
+__Additional Resources for Can Make Change__  
+* Wikipedia: https://en.wikipedia.org/wiki/Change-making_problem  
+* GeeksforGeeks: http://www.geeksforgeeks.org/dynamic-programming-set-7-coin-change/  
+
+### Minimum Coins Needed  
+__Input:__  unlimited coins in denomiations d<sub>1</sub>,...,d<sub>n</sub> and amount A  
+__Output:__ minimum number of coins needed for form A  
+__Idea:__  Same as [Knapsack Problem](#knapsack-problem).  The __i<sup>th</sup> coin can be added or not__.  Compare the nunmber of coins if we use another d<sub>i</sub> coin or just use minimum without d<sub>i</sub> denomination.  
+__Subproblem:__  M[i,j] = min number of coins needed to form amount j using coins d[1...i]  
+__Recurrence:__  
+
+| cell | value |  
+| --- | --- |  
+| `M[i, j] = `| <b>if</b> `j &#8805; d[i]`, <b>then</b> `min { M[i-1, j], M[i, j-d[i]] + 1 }` |  
+|  | <b>else:</b> `M[i-1, j]` |  
+
+__Base Case:__  
+  * `M[i, 0] = 0`  
+  * `M[0, j] = 0`  
+
+__Run-time:__  T(n, A) = O(n * A)  
+
+#### Pseudocode for Minimum Coins Needed  
+<pre><code>
+<b>Minimum-Coins-Needed(d[1...n], A)</b>
+01 create table M[0...n, 0...A]
+02 for i=0 to n
+03 	M[i,0] = 0
+04 for j=0 to A
+05 	M[0,j] = 0
+06 for i=1 to n
+07 	for j=1 to A
+08 		if j &#8805; d[i]
+09 			M[i,j] = min { M[i-1, j], M[i, j-d[i]] + 1 }
+10 		else
+11 			M[i,j] = M[i-1, j]
+12 return M[n,A]
+</code></pre>  
+
+#### Java for Minimum Coins Needed  
+```
+[code here]
+
+```
+__Additional Resources for Minimum Coins Needed__  
+* Wikipedia: https://en.wikipedia.org/wiki/Change-making_problem  
+* GeeksforGeeks: http://www.geeksforgeeks.org/find-minimum-number-of-coins-that-make-a-change/  
+
+### Can Partition Array Into Equal Sums  
+__Input:__  an array A[1...n] of numbers  
+__Output:__ True/False if array __can be divided into two sets of equal value__  
+__Idea:__  Similar to [Knapsack Problem](#knapsack-problem).  Find sum of A[1...n] and create DP table M[0...n, 0...<sup>sum</sup>&frasl;<sub>2</sub>] that finds the max possible sum of A[1...i] that is &#8804; j. If M[n, <sup>sum</sup>&frasl;<sub>2</sub>] == <sup>sum</sup>&frasl;<sub>2</sub>, then return true.  
+__Subproblem:__  M[i,j] = the max possible sum using A[1...i] that is &#8804; j  
+__Recurrence:__  
+
+| cell | value |  
+| --- | --- |  
+| `M[i, j] = `| <b>if</b> i &#8804; j`, <b>then</b> `max{ M[i-1, j], M[i-1, j-A[i]] + A[i] }` |  
+|  | <b>else</b> `M[i-1, j]` |  
+
+__Base Case:__  
+  * `M[i, 0] = 0`  
+  * `M[0, j] = 0`  
+
+__Run-time:__  T(n, <sup>sum</sup>&frasl;<sub>2</sub>) = O(n * <sup>sum</sup>&frasl;<sub>2</sub>)  
+
+#### Pseudocode for Can Partition Array Into Equal Sums  
+<pre><code>
+<b>Can-Partition-Array-Into-Equal-Sums(d[1...n], A)</b>
+01 sum = 0
+02 for i=1 to n
+03 	sum = sum + A[1]
+04 create table M[0...n, 0...<sup>sum</sup>&frasl;<sub>2</sub>]
+02 for i=0 to n
+03 	M[i,0] = 0
+04 for j=0 to <sup>sum</sup>&frasl;<sub>2</sub>
+05 	M[0,j] = 0
+06 for i=1 to n
+07 	for j=1 to <sup>sum</sup>&frasl;<sub>2</sub>
+08 		if i &#8804; j
+09 			M[i,j] = max{ M[i-1, j], M[i-1, j-A[i]] + A[i] }
+10 		else
+11 			M[i,j] = M[i-1, j]
+12 return M[n,<sup>sum</sup>&frasl;<sub>2</sub>]
+</code></pre>  
+
+#### Java for Can Partition Array Into Equal Sums  
+```
+[code here]
+
+```
+__Additional Resources for Can Partition Array Into Equal Sums__  
+* Wikipedia: https://en.wikipedia.org/wiki/Partition_problem  
+* GeeksforGeeks: http://www.geeksforgeeks.org/dynamic-programming-set-18-partition-problem/  
