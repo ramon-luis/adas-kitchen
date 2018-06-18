@@ -281,7 +281,7 @@ What does Partition return if all elements are equal in value? __i+1 = r__
 01 x = A[r]  // set pivot
 02 i = p-1  // set left marker i outside of p
 03 for j=p to r-1  // loop from p to pivot
-04 	if A[j] &#8804; A[i]
+04 	if A[j] &#8804; x // compare to pivot
 05 		i = i+1
 06 		exchange A[i], A[j]
 07 exchange A[i+1], A[r]  // swap pivot
@@ -592,7 +592,7 @@ __Recurrence:__
 
 | cell | value |  
 | --- | --- |  
-| `M[i, j] = `| <b>if</b> `w<sub>i</sub> &#8804; j`, <b>then</b> `max { v<sub>i</sub> + M[i-1, j-w[i]], M[i-1, j] }` |  
+| `M[i, j] = `| <b>if</b> <code>w<sub>i</sub> &#8804; j</code>, <b>then</b> <code>max { v<sub>i</sub> + M[i-1, j-w[i]], M[i-1, j] }</code> |  
 |  | <b>else:</b> `M[i-1, j]` |  
 
 __Base Case:__  
@@ -1293,4 +1293,71 @@ __Additional Resources for Identify Connected Components__
 * GeeksforGeeks: http://www.geeksforgeeks.org/connected-components-in-an-undirected-graph/  
 
 
+### Strongly Connected Components  
+__Input:__ directed (unweighted) graph G=(V,E)   
+__Output:__ groups/trees of strongly connected components where every pair of vertices (u,v) is reachable from each other  
+__Structure:__  
+  1. call DFS
+  2. create transpose G<sup>T</sup> of G
+  3. run DFS on G<sup>T</sup> in decreasing f[u] time  
+
+__Maintains:__ same as DFS: d[v], f[v], p[v], color[v], time  
+__Run-time:__ O(V+E)  
+
+#### Pseudocode for Strongly Connected Components  
+<pre><code>
+<b>Strongly-Connected-Components(G)</b>
+01 DFS(G)
+02 G<sup>T</sup> = Transpose(G)
+03 DFS(G<sup>T</sup>) but in main loop consider vertices in decreasing order of f[v]
+04 output vertices of each tree from DFS(G<sup>T</sup>) as separate SCC (Strongly Connected Component)
+</code></pre>
+
+#### Java for Strongly Connected Components  
+```
+[code here]
+
+```  
+__Additional Resources for Strongly Connected Components__  
+* Wikipedia: https://en.wikipedia.org/wiki/Strongly_connected_component  
+* GeeksforGeeks: http://www.geeksforgeeks.org/strongly-connected-components/  
+
+### Is Bipartite  
+__Input:__ undirected (connected) graph G=(V,E)   
+__Output:__ bipartite coloring of vertices or false  
+__Structure:__ use DFS to process all vertices and color opposite of parent  
+__Maintains:__ same as DFS: p[v] &amp; color[v] but no need for d[v]  
+__Run-time:__ O(V+E)  
+
+#### Pseudocode for Is Bipartite
+<pre><code>  ************* WORKING HERE*******
+<b>Is-Bipartite</b>
+01 for each vertex v in V
+02  color[v] = white
+03  cc[v] = nil
+04 k = 0
+05 for each vertex u in V
+06  if color[u] == white
+07    k = k+1
+08    DFS-Visit(G,u,k)
+09 return cc
+</code></pre>
+
+<pre><code>
+<b>DFS-Visit(G, u, k)</b>
+01 cc[u] = k
+02 color[u] = gray
+03 for each vertex v in adj[u]
+04  if color[v] == white
+05    DFS-Visit(G, v, k)
+06 color[u] = black
+</code></pre>
+#### Java for Identify Connected Components  
+```
+[code here]
+
+```  
+__Additional Resources for Identify Connected Components__  
+* Wikipedia: https://en.wikipedia.org/wiki/Connected-component_labeling  
+* GeeksforGeeks: http://www.geeksforgeeks.org/connected-components-in-an-undirected-graph/  
 
